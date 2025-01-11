@@ -1,0 +1,61 @@
+
+.landing-page-wrapper{
+    height: 100vh;
+    padding-top: 112px;
+
+    h1 {
+        font-size: 128px;
+        font-weight: 800;
+        text-align: center;
+        margin: 0;
+    }
+
+    .second-title{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .line{
+            background-color: black;
+            height: 3px;
+            width: calc(100% - 346px)
+            
+        }
+
+        p{
+            width: 346px;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+            min-width: 30%;
+            color: #00BC8F;
+            text-align: center;
+        }
+    }
+
+    .scroll-area{
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+        font-weight: 300;
+
+        a{
+            text-decoration: none;
+            color: black;
+            align-self: flex-end;
+            writing-mode:vertical-rl;
+        }
+
+        img{
+            height: 160px;
+        }
+
+        p{
+            text-align: center;
+        }
+    }
+    
+}
+
