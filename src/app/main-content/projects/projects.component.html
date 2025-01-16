@@ -1,1 +1,26 @@
-<p>projects works!</p>
+<div class="projects-wrapper">
+    <div class="title">
+        <h1 class="fontSyne">Portfolio</h1>
+        <span class="fontOverpass">Explore a selection of my work here - Interact with <br> projects to see my skills in action.</span>
+    </div>
+    <div class="projects">
+<app-project-component
+[number]="'01/04'"
+[imageSrc]="'assets/img/join.png'"
+[title]="'Join'"
+[skills]="'HTML | CSS | Firebase'"
+[description]="'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.'"
+[reverse]="false"
+></app-project-component>
+<app-project-component 
+[number]="'02/04'"
+[imageSrc]="'assets/img/pollo_loco.png'"
+[title]="'El Pollo Loco'"
+[skills]="'JavaScript | HTML | CSS'"
+[description]="'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe collect some Coins and Chili bottles for defeating the enemy.'"
+[reverse]="true"
+></app-project-component>
+    </div>
+</div>
+
+<!--Try to make reverse classes with [ngStyles] and Input variable as "reversed : false/true"-->

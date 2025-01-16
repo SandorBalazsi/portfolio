@@ -1,0 +1,66 @@
+.project-wrapper{
+    display: flex;
+    position: relative;
+    padding-bottom: 70px;
+
+    img{
+        width: 620px;
+    }
+
+}
+
+
+.nr-project{
+    font-size: 48px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.project-details{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 140px;
+
+        h1{
+            font-size: 45px;
+            font-weight: 800;
+        }
+
+        span{
+            font-size: 23px;
+            color: #00BC8F;
+            text-size-adjust: 1px;
+        }
+
+        p{
+            font-size: 16px;
+
+        }
+}
+button{
+    
+    position: absolute;
+    bottom: 0;
+    left: 140px;
+    padding: 20px 60px 20px 60px;
+    background-color: unset;
+    border: 4px black solid;
+    font-size: 23px;
+    cursor: pointer;
+    align-self: center;
+    transition: font-weight 0.5s, padding 0.5s;
+    &:hover{
+        font-weight: 700;
+        padding: 20px 80px 20px 80px;
+    }
+}
+
+#wrapper{
+    
+}
+

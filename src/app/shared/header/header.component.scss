@@ -3,9 +3,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: calc(100% - 200px);
+    top: 0;
+    background-color: #FFFCF3;
+    z-index: 1;
 
     .logo{
         height: 60px;
+        background-color: #FFFCF3;
         
     }
 

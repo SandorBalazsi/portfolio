@@ -1,0 +1,13 @@
+<div [ngStyle]="{ 
+    'flex-direction': reverse ? 'row-reverse' : 'row'}" class="project-wrapper">
+<span [ngStyle]="{ 
+    'right': reverse ? 'unset' : '0',
+    'left': reverse ? '0' : 'unset' }" class="fontSyne nr-project">{{ number }}</span>
+<img [src]="imageSrc" alt="">
+<div [ngStyle]="{'padding-left': reverse ? '0' : '140px'}" class="project-details">
+    <h1 class="project-title fontSyne">{{ title}}</h1>
+    <span class="skills fontOverpass">{{ skills }}</span>
+    <p class="description fontOverpass">{{ description }}</p>
+    <button [ngStyle]="{'left': reverse ? '0' : '140px'}" class="fontOverpass" (click)="openGithub()">Github</button>
+</div>
+</div>
