@@ -1,0 +1,111 @@
+.reference-wrapper{
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.reference-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 51px;
+    padding-bottom: 40px;
+
+    h1{
+        font-size: 78px;
+        font-weight: 800;
+        margin: 0;
+        transition: color 0.15s;
+
+        &:hover{
+            color: #00BC8F;
+        }
+    }
+
+    span{
+        font-size: 22px;
+    }
+}
+
+.reference-card-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    div{
+        width: 400px;
+        height: 344px;
+        border: 4px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            width: 40px;
+            height: 40px;
+            padding-top: 24px;
+            padding-bottom: 16px;
+        }
+
+        span{
+            font-size: 14px;
+            padding-bottom: 24px;
+
+        }
+
+        .name{
+            font-size: 22px;
+            font-weight: 700;
+            padding-bottom: 8px;
+
+        }
+
+        p{
+            padding: 0 16px 0 16px;
+            font-size: 18px;
+            margin: 0;
+        } 
+
+        &:hover{
+                border-color:#00BC8F;
+            
+            img{
+                filter: invert(48%) sepia(97%) saturate(1670%) hue-rotate(131deg) brightness(96%) contrast(101%);
+            }
+        }
+    }
+}
+
+.arrow-wrapper{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    
+    >div{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url('/assets/img/arrow-right-1.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 235px;
+        height: 235px;
+        transition: background-image 0.1s, width 0.5s, height 0.5s;
+        cursor: pointer;
+
+        &:hover {
+            background-image: url('/assets/img/arrow-right-2.png');
+            width: 307px;
+            height: 307px;
+        }
+
+        &:not(:hover) {
+            background-image: url('/assets/img/arrow-right-3.png');
+            width: 235px;
+            height: 235px;
+    }
+}
+}

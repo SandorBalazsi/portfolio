@@ -1,0 +1,149 @@
+.contact-triangle{
+    border-bottom: 220px solid black;
+    border-right: 101vw solid transparent;
+    width: 0;
+    height: 0;
+    margin-top: -150px;
+    
+
+}
+.contact-wrapper{
+    margin-top: 0;
+    background-color: black;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        
+        font-size: 78px;
+        font-weight: 800;
+        align-self: start;
+    }
+
+    h3{
+        font-size: 32px;
+        font-weight: 700;
+        color: #00BC8F;
+    }
+
+    span{
+        font-size: 22px;
+        padding-bottom: 22px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 617px;
+        
+
+        input{
+            cursor: pointer;
+            padding: 15px 0 15px 25px;
+            border: 2px solid #FFFCF3;
+            border-top-color: black;
+            border-left-color: black;
+            border-right-color: black;
+            color: white;
+            font-size: 16px;
+            font-weight: 400px;
+            width: 100%;
+            outline: none;
+            
+
+            &:hover{
+                border: 2px solid #FFFCF3;;
+            }
+
+            &:focus{
+                border: 2px solid #FFFCF3;
+            }
+            
+        }
+
+        .email, .contact-name{
+            
+            height: 20px;
+            background-color: unset;
+        }
+
+        .message{
+            border: 2px solid #FFFCF3;
+            border-top-color: black;
+            border-left-color: black;
+            border-right-color: black;
+            cursor: pointer;
+            height: 172px;
+            background-color: unset;
+            color: white;
+            width: 100%;
+            outline: none;
+
+
+            &:hover{
+                border: 2px solid #FFFCF3;
+            }
+
+            &:focus{
+                border: 2px solid #FFFCF3;
+            }
+        }
+
+        .message::placeholder{
+            color: white;
+            font-size: 16px;
+            font-weight: 400px;
+            padding-top: 15px;
+            padding-left: 25px;
+        }
+    }
+}
+
+.floating-label-group{
+    position: relative;
+    width: 100%;
+    
+
+        .floating-label{
+            font-size: 16px;
+            font-weight: 400px;
+            position: absolute;
+            color: FFFCF3;
+            top: 18px;
+            left: 27px;
+            transition: all 0.1s ease;
+            
+        }
+
+        input:focus ~ .floating-label,
+        input:not(:focus):valid ~ .floating-label {
+            top: -9px;
+            bottom: 0px;
+            left: 15px;
+            height: 16px;
+            background-color: black;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .message:focus ~ .floating-label,
+        .message:not(:focus):valid ~ .floating-label {
+            top: -9px;
+            bottom: 0px;
+            left: 15px;
+            height: 16px;
+            background-color: black;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+
+}
+
+
+
