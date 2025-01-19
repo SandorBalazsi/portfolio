@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 34px;
 
     h1{
         
@@ -39,12 +40,16 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 617px;
+        width: 50%;
+        margin-left: -25px;
         
 
-        input{
+        .email, .contact-name{
+            
+            height: 20px;
+            background-color: unset;
             cursor: pointer;
-            padding: 15px 0 15px 25px;
+            padding: 15px 25px 15px 25px;
             border: 2px solid #FFFCF3;
             border-top-color: black;
             border-left-color: black;
@@ -54,7 +59,7 @@
             font-weight: 400px;
             width: 100%;
             outline: none;
-            
+
 
             &:hover{
                 border: 2px solid #FFFCF3;;
@@ -63,13 +68,6 @@
             &:focus{
                 border: 2px solid #FFFCF3;
             }
-            
-        }
-
-        .email, .contact-name{
-            
-            height: 20px;
-            background-color: unset;
         }
 
         .message{
@@ -83,6 +81,7 @@
             color: white;
             width: 100%;
             outline: none;
+            padding: 15px 25px 15px 25px;
 
 
             &:hover{
@@ -108,9 +107,10 @@
     position: relative;
     width: 100%;
     
+    
 
         .floating-label{
-            font-size: 16px;
+            font-size: 16px; 
             font-weight: 400px;
             position: absolute;
             color: FFFCF3;
@@ -121,7 +121,7 @@
         }
 
         input:focus ~ .floating-label,
-        input:not(:focus):valid ~ .floating-label {
+        input:not(:placeholder-shown) ~ .floating-label{
             top: -9px;
             bottom: 0px;
             left: 15px;
@@ -132,7 +132,7 @@
         }
 
         .message:focus ~ .floating-label,
-        .message:not(:focus):valid ~ .floating-label {
+        .message:not(:placeholder-shown) ~ .floating-label{
             top: -9px;
             bottom: 0px;
             left: 15px;
@@ -143,6 +143,98 @@
         }
 
 
+}
+
+.input-wrong{
+    background-image: url(/assets/img/wrong.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-origin: content-box;
+}
+
+.input-correct{
+    background-image: url(/assets/img/correct.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-origin: content-box;
+}
+
+.submit-button{
+    margin-top: 40px;
+    padding: 20px 60px 20px 60px;
+    background-color: unset;
+    border: 4px white solid !important;
+    font-size: 23px;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+    transition: font-weight 0.5s, padding 0.5s;
+    outline: none;
+
+    &:hover{
+        font-weight: 700;
+        padding: 20px 80px 20px 80px;
+    }
+}
+
+.privacy-check{
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+    align-items: end;
+
+    .checkbox {
+        appearance: none;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fffcf3;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      .checkbox:hover{
+        background-image: url('/assets/img/checkbox-background.png');
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-position: center;
+        background-origin:border-box;
+
+        
+      }
+      
+      .checkbox:checked {
+        background-color: #00bc8f;
+      }
+      
+      .checkbox:checked::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 8px;
+        height: 4px;
+        border-bottom: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+        transform: rotate(-45deg);
+      }
+      
+      
+
+    p{
+        padding: 0;
+        margin: 0;
+    }
+
+    a{
+        text-decoration: none;
+        color: #00BC8F;
+
+        &:hover{
+            font-weight: 700;
+        }
+
+    }
 }
 
 
