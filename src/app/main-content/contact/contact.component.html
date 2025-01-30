@@ -7,25 +7,36 @@
         <div class="floating-label-group">
             <input placeholder=" " #name="ngModel" [(ngModel)]="contactData.name" [ngClass]="{ 'input-wrong': !name.valid && name.touched, 'input-correct': name.valid && name.touched}" class="contact-name" type="text" id="name" name="name" autocomplete="off" required>
             <label class="floating-label fontOverpass">Your name</label>
-            @if (!name.valid && name.touched){
-                <span class="fontOverpass" style="padding-top: 10px; padding-bottom: 0; color: red; font-size: 16px;">Your name is required</span>
-            }
+            <span class="warning fontOverpass" 
+                [ngClass]="{ 'visible': !name.valid && name.touched, 'hidden' : name.valid || !name.touched}"
+            >Your name is required</span>
         </div>
         <div class="floating-label-group">
             <input placeholder=" " #email="ngModel" [(ngModel)]="contactData.email" [ngClass]="{ 'input-wrong': !email.valid && email.touched, 'input-correct': email.valid && email.touched}" class="email" type="email" id="email" name="email" autocomplete="off" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
             <label class="floating-label fontOverpass">Your email</label>
-            @if (!email.valid && email.touched){
-                <span class="fontOverpass" style="padding-top: 10px; padding-bottom: 0; color: red; font-size: 16px;">Your email is required</span>
-            }
+            <span class="warning fontOverpass"
+            [ngClass]="{ 'visible': !email.valid && email.touched, 'hidden' : email.valid || !email.touched}"
+            >Your email is required</span>
+            
         </div>
         <div class="floating-label-group">
-            <textarea placeholder=" " #message="ngModel" [(ngModel)]="contactData.message" [ngClass]="{ 'input-wrong': !message.valid && message.touched, 'input-correct': message.valid && message.touched}" minlength="4" class="message" type="text" id="message" name="message" autocomplete="off" required></textarea>
+            <textarea placeholder=" " #message="ngModel" [(ngModel)]="contactData.message" [ngClass]="{ 'input-wrong': !message.valid && message.touched, 'input-correct': message.valid && message.touched}" minlength="1" class="message" type="text" id="message" name="message" autocomplete="off" required></textarea>
             <label class="floating-label fontOverpass">Your message</label>
-            @if (!message.valid && message.touched){
-                <span class="fontOverpass" style="padding-top: 10px; padding-bottom: 0; color: red; font-size: 16px; transition: all 0.1s ease;">Your message is empty</span>
-            }
+            <span class="warning fontOverpass"
+            [ngClass]="{ 'visible': !message.valid && message.touched, 'hidden' : message.valid || !message.touched}"
+            >Your message is empty</span>
         </div>
-        <div class="privacy-check"><input class="checkbox" type="checkbox"><p class="fontOverpass">I've read the <a href="">privacy Policy</a> and agree to the processing of my data as outlined.</p></div>
-        <button class="submit-button" type="submit" >Send message</button>
+        <div class="privacy-check">
+            <div class="privacy-input-p">
+            <input #checkbox [(ngModel)]="checkboxChecked" name="checkbox" (click)="changeCheckbox()" class="checkbox" type="checkbox">
+            <p class="fontOverpass">I've read the <a class="privacy-link" href="">privacy Policy</a> and agree to the processing of my data as outlined.</p>
+            </div>
+            <div class="privacy-warning">
+            <span class="warning fontOverpass"
+            [ngClass]="checkboxChecked ? 'hidden' : 'visible'"
+            >Please accept the privacy policy.</span>
+            </div>
+        </div>
+        <button [disabled]="contactForm.form.invalid" class="submit-button" type="submit" >Send message</button>
     </form>
 </div>

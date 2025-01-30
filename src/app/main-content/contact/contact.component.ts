@@ -11,6 +11,16 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  checkboxChecked = false
+
+  changeCheckbox(){
+    if(!this.checkboxChecked){
+      this.checkboxChecked = true;
+    } else{
+      this.checkboxChecked = false;
+    }
+  }
+  
 
   http = inject(HttpClient);
 

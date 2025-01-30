@@ -1,0 +1,86 @@
+.footer-wrapper {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: white;
+  font-size: 22px;
+  padding-bottom: 46px;
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .footer-social {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 46px;
+
+    img {
+      transition: transform ease 300ms;
+      &:hover {
+        transform: translate(0, -10px);
+      }
+    }
+
+    .scroll-up {
+      width: 54px;
+      height: 76px;
+      position: absolute;
+      right: 0;
+      top: -108px;
+      transition: transform 0.3s ease-in-out;
+      transform-origin: bottom center; /* Keeps the bottom part fixed */
+      cursor: pointer;
+
+      &:hover {
+        transform: scaleY(1.46);
+      }
+    }
+
+    .legal-notice {
+      position: absolute;
+      right: -19px;
+      bottom: -26px;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 5px 19px 8px 10px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        padding: 5px 10px 8px 15px;
+        font-weight: 800;
+
+        &::after {
+          transform: translateX(0) scaleX(1); /* Slide in and expand */
+          opacity: 1; /* Fade in the border */
+        }
+      }
+
+      &::after {
+        content: ""; /* This is necessary for the pseudo element to work. */
+        position: absolute;
+        bottom: 6px; /* Position at the bottom of the parent element */
+        right: 11px; /* Align the border to the right */
+        height: 2px; /* Thickness of the border */
+        width: 45%; /* Full width for the animation */
+        background-color: #00bc8f; /* Border color */
+        transform: translateX(-60%); /* Start at 60% width */
+        transform-origin: left; /* Start animation from the left */
+        opacity: 0; /* Initially invisible */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+      }
+    }
+  }
+}
+
+

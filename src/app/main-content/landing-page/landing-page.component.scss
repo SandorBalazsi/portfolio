@@ -51,10 +51,6 @@
             
         }
 
-        img{
-            height: 160px;
-        }
-
         p{
             text-align: center;
             margin-bottom: 0;
@@ -62,4 +58,24 @@
     }
     
 }
+
+.scroll-down-animation{
+    width: 116px;
+    height: 180px;
+    background-image: url("/assets/img/scrolldown-1.png");
+    background-repeat: no-repeat;
+    animation: changeBg 4s linear infinite normal; 
+    
+}
+
+@keyframes changeBg{
+    0%  {background-image: url("/assets/img/scrolldown-1.png");}
+    17% {background-image: url("/assets/img/scrolldown-2.png");}
+    34% {background-image: url("/assets/img/scrolldown-3.png");}
+    51% {background-image: url("/assets/img/scrolldown-4.png");}
+    68% {background-image: url("/assets/img/scrolldown-5.png");}
+    85% {background-image: url("/assets/img/scrolldown-6.png");}
+    100% {background-image: url("/assets/img/scrolldown-1.png");}
+ }
+
 
