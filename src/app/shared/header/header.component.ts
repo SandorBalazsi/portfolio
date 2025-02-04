@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NavigationService } from '../services/navigation.service';
+
 
 @Component({
   selector: 'app-header',
@@ -8,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+navService= inject(NavigationService);
 
+
+changeNav(){
+  this.navService.toggleNav();
+}
 }

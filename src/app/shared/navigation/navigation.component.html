@@ -1,19 +1,19 @@
-<div class="navigation-wrapper">
-    <div class=" nav-menu">
-        <a class="fontSyne" href="">About me</a>
-        <a class="fontSyne" href="">Skills</a>
-        <a class="fontSyne" href="">Portfolio</a>
+<div class="navigation-wrapper" [ngClass]="{ 'nav-open': navOpen }">
+    <div class="nav-menu">
+        <a (click)="scrollToSection('about-me')" class="fontSyne">About me</a>
+        <a (click)="scrollToSection('skills')" href="#skills-section" class="fontSyne">Skills</a>
+        <a (click)="scrollToSection('projects')" href="#projects" class="fontSyne">Portfolio</a>
     </div>
     <div class="contact-triangle"></div>
     <div class="nav-footer">
         <div class="nav-footer-left">
             <h1 class="fontSyne">Say Hi!</h1>
-            <a class="fontOverpass" href="">sandor.b&#64;gmx.ch</a>
+            <a [href]="mailto('sandor.b@gmx.ch','Let\'s Connect!')" class="fontOverpass">sandor.b&#64;gmx.ch</a>
         </div>
         <div class="nav-footer-right">
-            <img src="/assets/img/github.png" alt="">
-            <img src="/assets/img/mail.png" alt="">
-            <img src="/assets/img/linkedin.png" alt="">
+            <a href="https://github.com/SandorBalazsi" target="_blank"><img src="/assets/img/github.png" alt=""> </a>
+            <a [href]="mailto('sandor.b@gmx.ch','Let\'s Connect!')"><img src="/assets/img/mail.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/sandor-balazsi-0690952a0" target="_blank"><img src="/assets/img/linkedin.png" alt=""></a>
         </div>
        
     </div>

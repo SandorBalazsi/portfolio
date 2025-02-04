@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+  mailto(emailAddress: string, emailSubject: any) {
+    return "mailto:" + emailAddress + "?subject=" + emailSubject
+  }
 }

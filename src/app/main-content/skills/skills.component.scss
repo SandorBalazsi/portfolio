@@ -88,31 +88,35 @@
     }
 
     a{
-        text-decoration: none;
-        color: #00bc8f;
-        padding: 5px 10px 5px 10px;
-        position: relative;
-
-        &:hover{
-            font-weight: 800;
-            &::before{
-                transform: scaleX(1);
-            }
+      text-decoration: none;
+      color: #00bc8f;
+      padding: 5px 19px 8px 10px;
+      position: relative;
+      transition: all 0.3s ease;
+      font-weight: 400;
+  
+      &:hover {
+        font-weight: 800;
+  
+        &::after {
+          transform: translateX(0) scaleX(1); /* Slide in and expand */
+          opacity: 1; /* Fade in the border */
         }
-
-        &::before{
-                content: "";
-                position: absolute;
-                display: block;
-                width: 100%;
-                height: 2px;
-                bottom: 0;
-                left: 0;
-                background-color: #00bc8f;
-                transform: scaleX(0);
-                transform-origin: top left;
-                transition: transform 0.3s ease;
-              }
+      }
+  
+      &::after {
+        content: ""; /* This is necessary for the pseudo element to work. */
+        position: absolute;
+        bottom: 6px; /* Position at the bottom of the parent element */
+        right: 11px; /* Align the border to the right */
+        height: 2px; /* Thickness of the border */
+        width: 45%; /* Full width for the animation */
+        background-color: #00bc8f; /* Border color */
+        transform: translateX(-60%); /* Start at 60% width */
+        transform-origin: left bottom; /* Start animation from the left */
+        opacity: 0; /* Initially invisible */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+      }
     }
 }
 
@@ -124,7 +128,7 @@
     margin-left: 100px;
     
     
-    >div{
+    .arrow{
         position: absolute;
         top: 0;
         left: 0;

@@ -1,12 +1,39 @@
-import { Component } from '@angular/core';
+import { NgClass} from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { NavigationService } from '../services/navigation.service';
+import { ScrollService } from '../services/scroll.service';
+
+
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })
-export class NavigationComponent {
 
+export class NavigationComponent {
+  navService = inject(NavigationService);
+  navOpen = false;
+  
+
+  constructor(private scrollService: ScrollService){
+    this.navService.navOpen$.subscribe(open => {
+      this.navOpen = open; // Update component state when service changes
+    });
+  }
+
+  scrollToSection(elementId: string): void {
+    this.closeNav();
+    this.scrollService.scrollToElement(elementId, 92);
+  }
+
+  closeNav(){
+    this.navOpen = false;
+  }
+  
+  mailto(emailAddress: string, emailSubject: any) {
+    return "mailto:" + emailAddress + "?subject=" + emailSubject
+  }
 }

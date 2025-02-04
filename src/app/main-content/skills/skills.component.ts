@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class SkillsComponent {
 
+  mailto(emailAddress: string, emailSubject: any) {
+    return "mailto:" + emailAddress + "?subject=" + emailSubject
+  }
 }
