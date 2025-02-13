@@ -1,11 +1,11 @@
 .skills-wrapper {
-  border: 4px solid black;
+  
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 
   img {
     width: auto;
@@ -34,6 +34,8 @@
 
   > div {
     display: flex;
+    flex-direction: column;
+    border: 4px solid black;
 
     > div {
       padding: 120px 114px 0 114px;
@@ -76,11 +78,11 @@
 }
 
 .missed-skill{
-    display: flex;
+    display: flex !important;
     font-size: 22px;
     letter-spacing: 1px;
-    padding-bottom: 119px;
-    padding-top: 48px;
+    padding: 48px 0 119px 0 !important;
+    gap: 0 !important;
 
     span{
         align-self: flex-end;

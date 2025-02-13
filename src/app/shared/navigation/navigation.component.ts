@@ -26,7 +26,8 @@ export class NavigationComponent {
 
   scrollToSection(elementId: string): void {
     this.closeNav();
-    this.scrollService.scrollToElement(elementId, 92);
+    this.navService.toggleNav();
+    this.scrollService.scrollToElement(elementId, 120);
   }
 
   closeNav(){
