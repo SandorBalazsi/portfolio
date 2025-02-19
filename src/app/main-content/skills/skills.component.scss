@@ -16,6 +16,7 @@
   }
 
   h1 {
+    text-align: center;
     font-size: 78px;
     font-weight: 800;
     margin: 0;
@@ -71,6 +72,7 @@
             text-align: center;
             font-size: 16px;
             font-weight: 700;
+            
         }
       }
     }
@@ -87,6 +89,7 @@
     span{
         align-self: flex-end;
         padding-left: 28px;
+        width: 70%;
     }
 
     a{
@@ -122,36 +125,123 @@
     }
 }
 
+.animation{
+  animation: moveArrow 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
 .arrow-wrapper{
-    width: 100%;
-    height: 300px;
-    position: relative;
-    padding-top: 22px;
-    margin-left: 100px;
-    
-    
-    .arrow{
+  width: 100%;
+  height: 300px;
+  position: relative;
+  padding-bottom: 80px;
+  
+  >div{
+      position: absolute;
+      top: 75px;
+      left: 140px;
+      width: 300px;
+      height: 300px;
+      cursor: pointer;
+          
+      }
+
+      .arrow-line {
         position: absolute;
         top: 0;
-        left: 0;
-        background-image: url('/assets/img/arrow-left-1.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 235px;
-        height: 235px;
-        transition: background-image 0.1s, width 0.5s, height 0.5s;
-        cursor: pointer;
-
-        &:hover {
-            background-image: url('/assets/img/arrow-left-2.png');
-            width: 307px;
-            height: 307px;
+        left: 0;  /* Changed from right to left */
+        width: 4px;
+        height: 215px;
+        background-color: black;
+        transform-origin: top;
+        rotate: -45deg;  /* Changed from 45deg to -45deg */
+        transition: height 0.3s ease;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            transform-origin: top;
+            bottom: -25px;
+            left: 57px;  /* Changed from right to left */
+            width: 4px;
+            height: 82px;
+            background-color: black;
+            rotate: 45deg;  /* Changed from -45deg to 45deg */
         }
+    
+        &::after {
+            content: '';
+            position: absolute;
+            transform-origin: bottom right;  /* Changed from bottom left */
+            height: 4px;
+            width: 82px;
+            background-color: black;
+            rotate: 45deg;  /* Changed from -45deg to 45deg */
+            left: -80px;  /* Changed from right to left */
+            bottom: -2px;
+        }
+    
+        @keyframes moveArrow {
+            0% {height: 215px; top: 0; left: 0;}  /* Changed right to left */
+            50% {height: 317px; top: 0; left: 0;}  /* Changed right to left */
+            100% {height: 215px; top: 102px; left: 102px;}  /* Changed right to left */
+        }
+    
+      }
 
-        &:not(:hover) {
-            background-image: url('/assets/img/arrow-left-3.png');
-            width: 235px;
-            height: 235px;
+  }
+      
+
+@media (max-width: 1024px) {
+  .skills-wrapper{
+    h1{
+      font-size: 52px;
     }
+    .inner-window{
+      >div{
+        padding: 63px 16px 0 16px;
+        gap: 50px;
+      }
+      .missed-skill{
+        padding: 42px 0 48px 0 !important;
+        font-size: 20px;
+      }
+    }
+  }
+  .arrow-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+
+    >div{
+      left: unset;
+    }
+    .arrow{
+      position: unset;
+    }
+  }
 }
+
+@media (max-width:768px) {
+  .skills-wrapper{
+    h1{
+      font-size: 36px;
+    }
+    .inner-window{
+      >div{
+        gap: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .skills-wrapper{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .missed-skill{
+    flex-wrap: nowrap !important;
+    flex-direction: row;
+  }
 }

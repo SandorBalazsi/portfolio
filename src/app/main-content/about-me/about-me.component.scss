@@ -25,7 +25,7 @@
     font-weight: 400;
     font-size: 22px;
     gap: 87px;
-    position: relative;
+    
     padding-bottom: 29px;
 
     button{
@@ -72,10 +72,15 @@
         height: 40px;
 }
 
+.profile-pic-wrapper{
+    position: relative;
+}
+
 .profile-pic{
     
     width: 533px;
     height: 533px;
+    
 
     &:hover + .profile-pic-border,
     & + .profile-pic-border:hover {
@@ -94,34 +99,118 @@
     right: -24px;
 }
 
+.animation{
+    animation: moveArrow 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
 
 .arrow-wrapper{
     width: 100%;
     height: 300px;
     position: relative;
+    padding-bottom: 80px;
     
     >div{
         position: absolute;
-        top: 0;
-        right: 0;
-        background-image: url('/assets/img/arrow-right-1.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 235px;
-        height: 235px;
-        transition: background-image 0.1s, width 0.5s, height 0.5s;
+        top: 40px;
+        right: 50px;
+        width: 300px;
+        height: 300px;
         cursor: pointer;
-
-        &:hover {
-            background-image: url('/assets/img/arrow-right-2.png');
-            width: 307px;
-            height: 307px;
+            
         }
 
-        &:not(:hover) {
-            background-image: url('/assets/img/arrow-right-3.png');
-            width: 235px;
-            height: 235px;
+        .arrow-line{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 215px;
+            background-color: black;
+            transform-origin: top;
+            rotate: 45deg;
+            transition: height 0.3s ease;
+
+            &::before{
+                content: '';
+                position: absolute;
+                transform-origin: top;
+                bottom: -25px;
+                right: 57px;
+                width: 4px;
+                height: 82px;
+                background-color: black;
+                rotate: -45deg;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                transform-origin: bottom left;
+                height: 4px;
+                width: 82px;
+                background-color: black;
+                rotate: -45deg;
+                right: -80px;
+                bottom: -2px ;
+
+            }
+
+            @keyframes moveArrow {
+                0% {height: 215px; top: 0; right: 0;}
+                50% {height: 317px; top: 0; right: 0;}
+                100%{height: 215px; top: 102px; right: 102px;}
+            }
+        }
+
+    }
+        
+
+
+
+@media (max-width: 1024px) {
+    .about-me-text{
+        flex-direction: column;
+    }
+
+    .profile-pic-wrapper{
+        align-self: center;
+    }
+
+    .arrow-wrapper{
+        display: flex;
+        justify-content: center;
+        
+        >div{
+            right: unset;
+        }
+    
     }
 }
+
+@media (max-width:600px) {
+    .about-me-wrapper{
+        padding-left: 25px;
+        padding-right: 25px;
+        h1{
+            font-size: 36px;
+        }
+    }
+    .about-me-text-left{
+        font-size: 20px;
+    }
+
+    .profile-pic, .profile-pic-border{
+        width: 337px;
+        height: 337px;
+    }
+}
+
+@media (max-width:390px) {
+
+    .profile-pic, .profile-pic-border{
+        width: 227px;
+        height: 227px;
+    }
 }

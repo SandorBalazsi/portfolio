@@ -32,3 +32,18 @@
 .projects{
     padding-top: 118px;
 }
+
+@media (max-width:768px) {
+    .projects-wrapper{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .title{
+        h1{
+            font-size: 52px;
+        }
+        span{
+            font-size: 20px;
+        }
+    }
+}

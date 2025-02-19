@@ -48,7 +48,7 @@
         flex-direction: column;
         gap: 20px;
         width: 50%;
-        margin-left: -50px;
+        
         
 
         .email, .contact-name{
@@ -113,6 +113,7 @@
 .floating-label-group{
     position: relative;
     width: 100%;
+    margin-left: -25px;
     
     
 
@@ -294,5 +295,23 @@
 }
 
 
+@media (max-width:768px) {
+    .contact-wrapper{
+        padding-left: 25px;
+        padding-right: 25px;
 
+        h1{
+            font-size: 52px;
+        }
+        form{
+            width: 70%;
+        }
+        .submit-button{
+            padding: 20px 40px 20px 40px;
+        }
+    }
+    .contact-triangle{
+        border-bottom: 150px solid black;
+    }
+}
 

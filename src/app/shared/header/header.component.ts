@@ -11,9 +11,10 @@ import { NavigationService } from '../services/navigation.service';
 })
 export class HeaderComponent {
 navService= inject(NavigationService);
+isActive = false;
 
 
 changeNav(){
   this.navService.toggleNav();
-}
-}
+  this.isActive = !this.isActive;
+}}

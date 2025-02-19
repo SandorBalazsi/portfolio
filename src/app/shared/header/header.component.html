@@ -1,4 +1,9 @@
 <header>
     <a href="#"><img class="logo" src="../../../assets/img/logo-white.png" alt=""></a>
-    <img (click)="changeNav()" class="menu-logo" src="../../../assets/img/menu-icon/menu_1.png" alt="">
+    <div class="hamburger-menu" [class.active]="isActive" (click)="changeNav()">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+      </div>
 </header>
+<!-- (click)="changeNav()"> -->

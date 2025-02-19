@@ -25,22 +25,100 @@ header {
     }
 }
 
-@media (max-width: 660px) {
-    
-}
+.hamburger-menu {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+  }
 
-@media (max-width: 992px) {
-    header{
-        width: 100dvw;
-        padding: 0 0 0 0;
-        a{
-        margin-left: 25px;
-        }
-        img{
-        margin-right: 25px;
-        }
-    }
-    
-}
+  .line {
+    width: 44px;
+    height: 4px;
+    background: #333;
+    position: absolute;
+    left: 10px;
+    transition: all 0.7s;
+  }
+
+  .line-1 {
+    top: 15px;
+  }
+
+  .line-2 {
+    top: 27px;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  .line-3 {
+    top: 39px;
+  }
+
+  .hamburger-menu.active .line-1 {
+    animation: topLine 0.7s forwards;
+  }
+
+  .hamburger-menu.active .line-2 {
+    animation: middleLine 0.7s forwards;
+  }
+
+  .hamburger-menu.active .line-3 {
+    animation: bottomLine 0.7s forwards;
+  }
+
+  .hamburger-menu:not(.active) .line-1 {
+    animation: topLineReverse 0.7s forwards;
+  }
+
+  .hamburger-menu:not(.active) .line-2 {
+    animation: middleLineReverse 0.7s forwards;
+  }
+
+  .hamburger-menu:not(.active) .line-3 {
+    animation: bottomLineReverse 0.7s forwards;
+  }
 
 
+  @keyframes topLine {
+    0% { transform: translateX(0); }
+    25% { transform: scaleX(0.5) translateX(-10px); }
+    50% { transform:scaleX(0.5) translateX(30px); }
+    75% { transform:scaleX(0.5) translateX(17px) rotate(-45deg); }
+    100% { transform:scaleX(1) translateX(0px) translateY(12px) rotate(-45deg);}
+  }
+
+  @keyframes middleLine {
+    0% { transform: translateX(0); }
+    100% { transform:translateX(0) rotate(45deg)}
+  }
+
+  @keyframes bottomLine {
+    0% { transform: translateX(0); }
+    25% { transform: scaleX(0.5) translateX(10px); }
+    50% { transform:scaleX(0.5) translateX(-30px); }
+    75% { transform:scaleX(0.5) translateX(-17px) rotate(-45deg); }
+    100% { transform:scaleX(1) translateX(0px) translateY(-12px) rotate(-45deg);}
+  }
+
+
+  @keyframes topLineReverse {
+    0% { transform:scaleX(1) translateX(0px) translateY(12px) rotate(-45deg); }
+    25% { transform:scaleX(0.5) translateX(17px) rotate(-45deg); }
+    50% { transform: scaleX(0.5) translateX(30px); }
+    75% { transform: scaleX(0.5) translateX(10px);}
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes middleLineReverse {
+    0% {transform:translateX(0) rotate(45deg) }
+    100% {transform: translateX(0) rotate(0);}
+  }
+
+  @keyframes bottomLineReverse {
+    0% { transform:scaleX(1) translateX(0px) translateY(-12px) rotate(-45deg); }
+    25% { transform:scaleX(0.5) translateX(-17px) rotate(-45deg); }
+    50% { transform: scaleX(0.5) translateX(-30px); }
+    75% { transform: scaleX(0.5) translateX(10px);}
+    100% { transform: translateX(0); }
+  }

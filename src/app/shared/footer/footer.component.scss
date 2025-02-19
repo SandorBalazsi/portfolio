@@ -84,3 +84,33 @@
 }
 
 
+@media (max-width:768px) {
+  .footer-wrapper{
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .scroll-up{
+    display: none;
+  }
+
+  .arrow{
+    display: none;
+  }
+
+  .logo{
+    align-self: center;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .copyright{
+    padding-bottom: 79px;
+  }
+
+  .legal-notice{
+    bottom: -230px !important;
+    right: 43px !important;
+  }
+}

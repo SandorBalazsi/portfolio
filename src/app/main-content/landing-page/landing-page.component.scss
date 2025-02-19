@@ -56,35 +56,42 @@
   }
 }
 
-.scroll-down-animation {
+.scroll-down-wrapper{
+  position: relative;
   width: 116px;
   height: 180px;
-  background-image: url("/assets/img/scrolldown-1.png");
-  background-repeat: no-repeat;
-  animation: changeBg 4s linear infinite normal;
+  overflow: hidden;
 }
 
-@keyframes changeBg {
+.down-arrow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 95px;
+  border: 2px solid;
+  animation: jumpInfinite 2s infinite ease ;
+  
+}
+
+.down-arrow:after {
+  content: " ";
+  position: absolute;
+  top: 65px;
+  left: -15.5px;
+  width: 27px;
+  height: 27px;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  transform: rotateZ(45deg);
+}
+
+@keyframes jumpInfinite {
   0% {
-    background-image: url("/assets/img/scrolldown-1.png");
-  }
-  17% {
-    background-image: url("/assets/img/scrolldown-2.png");
-  }
-  34% {
-    background-image: url("/assets/img/scrolldown-3.png");
-  }
-  51% {
-    background-image: url("/assets/img/scrolldown-4.png");
-  }
-  68% {
-    background-image: url("/assets/img/scrolldown-5.png");
-  }
-  85% {
-    background-image: url("/assets/img/scrolldown-6.png");
+    top: -50%;
   }
   100% {
-    background-image: url("/assets/img/scrolldown-1.png");
+    top: 120%;
   }
 }
 
@@ -123,6 +130,7 @@
 
 @media (max-width: 768px) {
   .landing-page-wrapper {
+    padding-top: 243px;
     gap: 15%;
     h1 {
       font-size: 52px;

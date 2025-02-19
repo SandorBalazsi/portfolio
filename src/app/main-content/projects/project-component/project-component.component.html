@@ -1,7 +1,9 @@
 <div [ngClass]="{ 'reverse': reverse }" class="project-wrapper">
     <span class="fontSyne nr-project">{{ number }}</span>
-    <img [src]="imageSrc" alt="">
-    <div class="img-border"><div class="project-arrow"></div></div>
+    <div class="img-wrapper">
+        <img [src]="imageSrc" alt="">
+        <div class="img-border"><div class="project-arrow"></div></div>
+    </div>
     <div  class="project-details">
         <h1 class="project-title fontSyne">{{ title}}</h1>
         <span class="skills fontOverpass">{{ skills }}</span>
