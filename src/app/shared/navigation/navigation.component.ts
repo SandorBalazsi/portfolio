@@ -2,6 +2,7 @@ import { NgClass} from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { NavigationService } from '../services/navigation.service';
 import { ScrollService } from '../services/scroll.service';
+import { HeaderComponent } from '../header/header.component';
 
 
 
@@ -15,6 +16,8 @@ import { ScrollService } from '../services/scroll.service';
 
 export class NavigationComponent {
   navService = inject(NavigationService);
+  headerService = inject(HeaderComponent);
+  
   navOpen = false;
   
 
@@ -32,9 +35,13 @@ export class NavigationComponent {
 
   closeNav(){
     this.navOpen = false;
+    
+  
   }
   
   mailto(emailAddress: string, emailSubject: any) {
     return "mailto:" + emailAddress + "?subject=" + emailSubject
   }
+
+  
 }

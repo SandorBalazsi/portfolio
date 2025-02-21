@@ -1,8 +1,9 @@
 .landing-page-wrapper {
-  height: 100dvh;
+  height: calc(100dvh - 204px);
   padding-top: 204px;
   padding-left: 100px;
   padding-right: 100px;
+  gap: 30%;
 
   h1 {
     font-size: 128px;
@@ -52,6 +53,7 @@
     p {
       text-align: center;
       margin-bottom: 0;
+      margin-top: 6px;
     }
   }
 }
@@ -97,7 +99,6 @@
 
 @media (max-width: 1280px) {
   .landing-page-wrapper {
-    gap: 20%;
     display: flex;
     flex-direction: column;
     h1 {
@@ -115,7 +116,6 @@
 @media (max-width: 992px) {
     
   .landing-page-wrapper {
-    gap: 25%;
     h1 {
       font-size: 62px;
     }
@@ -131,7 +131,8 @@
 @media (max-width: 768px) {
   .landing-page-wrapper {
     padding-top: 243px;
-    gap: 15%;
+    height: calc(100dvh - 204px);
+    gap: 20%;
     h1 {
       font-size: 52px;
     }
@@ -167,7 +168,7 @@
         width: 85%;
     }
     .scroll-area{
-        p a{
+        p, a{
             font-size: 18px;
         }
     }

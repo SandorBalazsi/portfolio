@@ -122,3 +122,11 @@ header {
     75% { transform: scaleX(0.5) translateX(10px);}
     100% { transform: translateX(0); }
   }
+
+  @media (max-width:600px) {
+    header{
+      width: 91%;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }

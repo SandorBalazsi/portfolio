@@ -243,5 +243,10 @@
   .missed-skill{
     flex-wrap: nowrap !important;
     flex-direction: row;
+    gap: 8px !important;
+    padding: 48px 8px 119px 8px !important;
+    span{
+      padding-left: 0;
+    }
   }
 }

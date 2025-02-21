@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Injectable } from '@angular/core';
 import { NavigationService } from '../services/navigation.service';
 
 
@@ -9,6 +9,11 @@ import { NavigationService } from '../services/navigation.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
+
+@Injectable({
+  providedIn: 'root' // This makes it available throughout the app
+})
+
 export class HeaderComponent {
 navService= inject(NavigationService);
 isActive = false;
@@ -16,5 +21,8 @@ isActive = false;
 
 changeNav(){
   this.navService.toggleNav();
+}
+
+changeActive(){
   this.isActive = !this.isActive;
 }}

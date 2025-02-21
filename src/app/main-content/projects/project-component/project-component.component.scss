@@ -110,7 +110,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: -1;
+    z-index: 0;
     padding-left: 140px;
     opacity: 0;
     transform: translateX(-60%);
@@ -221,6 +221,16 @@ button{
                 left: unset !important;
                 right: 10px !important;
             }
+
+            .nr-project{
+                left: 25px;
+                right: unset;
+            }
+        }
+
+        .nr-project{
+            right: 25px;
+            left: unset;
         }
        
     }

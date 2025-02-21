@@ -23,8 +23,9 @@ constructor(){
 }
 
 
-openGithub() {
+openGithub(){
   window.open(this.githubLink, '_blank');
+  console.log('click worked');
 }
 
 
