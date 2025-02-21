@@ -20,7 +20,6 @@ export class ContactComponent {
       this.checkboxChecked = false;
     }
   }
-  
 
   http = inject(HttpClient);
 
@@ -30,7 +29,7 @@ export class ContactComponent {
     message:"",
   }
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://sandorbalazsi.com/sendMail.php',
