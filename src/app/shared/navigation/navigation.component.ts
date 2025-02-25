@@ -16,8 +16,6 @@ import { HeaderComponent } from '../header/header.component';
 
 export class NavigationComponent {
   navService = inject(NavigationService);
-  headerService = inject(HeaderComponent);
-  
   navOpen = false;
   
 
@@ -29,14 +27,13 @@ export class NavigationComponent {
 
   scrollToSection(elementId: string): void {
     this.closeNav();
+   
     this.navService.toggleNav();
-    this.scrollService.scrollToElement(elementId, 120);
+    this.scrollService.scrollToElement(elementId, 140);
   }
 
   closeNav(){
     this.navOpen = false;
-    
-  
   }
   
   mailto(emailAddress: string, emailSubject: any) {

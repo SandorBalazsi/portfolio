@@ -116,35 +116,21 @@
 @media (max-width: 992px) {
     
   .landing-page-wrapper {
-    h1 {
-      font-size: 62px;
-    }
-  }
-
-  .second-title {
-    .name {
-      font-size: 28px !important;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .landing-page-wrapper {
     padding-top: 243px;
     height: calc(100dvh - 204px);
-    gap: 20%;
+    gap: 15%;
     h1 {
       font-size: 52px;
     }
   }
 
   .second-title {
-    
     .name {
       font-size: 23px !important;
     }
   }
 }
+
 
 @media (max-width: 660px) {
   .landing-page-wrapper {

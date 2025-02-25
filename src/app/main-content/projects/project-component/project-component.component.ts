@@ -16,6 +16,7 @@ export class ProjectComponentComponent {
 @Input() skills!: string;
 @Input() description!: string;
 @Input() githubLink!: string;
+@Input() liveLink!: string;
 @Input() reverse: boolean | undefined = false;
 
 constructor(){
@@ -25,6 +26,11 @@ constructor(){
 
 openGithub(){
   window.open(this.githubLink, '_blank');
+  console.log('click worked');
+}
+
+openLive(){
+  window.open(this.liveLink, '_blank');
   console.log('click worked');
 }
 

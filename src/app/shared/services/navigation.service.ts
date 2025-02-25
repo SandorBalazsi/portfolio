@@ -11,7 +11,7 @@ export class NavigationService {
         navOpen$ = this.navOpenSubject.asObservable(); // Expose it as an observable
       
         toggleNav() {
-          
+         
           this.navOpenSubject.next(!this.navOpenSubject.value); // Toggle state
         }
 } 

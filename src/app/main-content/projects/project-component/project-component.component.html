@@ -8,6 +8,10 @@
         <h1 class="project-title fontSyne">{{ title}}</h1>
         <span class="skills fontOverpass">{{ skills }}</span>
         <p class="description fontOverpass">{{ description }}</p>
-        <button  class="fontOverpass" (click)="openGithub()">Github</button>
+        <div class="buttons">
+            <button  class="fontOverpass" (click)="openGithub()">Github</button>
+            <button  class="fontOverpass" (click)="openLive()">Live Test</button>
+        </div>
+        
     </div>
 </div>

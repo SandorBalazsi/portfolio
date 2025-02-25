@@ -50,6 +50,12 @@
 
       &:hover{
     
+        @media (min-width:1024px) {
+            .nr-project{
+                top: -40px;
+            }
+        }
+
         img{
             filter:none;
         }
@@ -66,6 +72,8 @@
         .project-arrow{
             animation: turnArrow 0.3s ease forwards;
         }
+
+       
 }
 
 .img-border{
@@ -102,6 +110,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    transition: all 0.2s ease;
 
 }
 
@@ -132,10 +141,15 @@
 
         }
 }
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 19px;
+}
 button{
     
-    position: absolute;
-    bottom: 0;
     left: 140px;
     padding: 20px 60px 20px 60px;
     background-color: unset;
@@ -144,6 +158,8 @@ button{
     cursor: pointer;
     align-self: center;
     transition: font-weight 0.5s, padding 0.5s;
+    text-wrap-mode: nowrap;
+    
     &:hover{
         font-weight: 700;
         padding: 20px 80px 20px 80px;
@@ -170,6 +186,10 @@ button{
             padding-left: 25px;
                 padding-right: 25px;
             transform: translateY(-60%);
+        }
+
+        .buttons{
+            flex-direction: column;
         }
         button{
             position: unset;
