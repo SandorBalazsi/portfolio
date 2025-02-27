@@ -89,11 +89,11 @@
         background-image: url('/assets/img/small-arrow-down.png');
         background-size: cover;
         background-repeat: no-repeat;
-        width: 52px;
-        height: 52px;
+        width: 42px;
+        height: 42px;
         position: absolute;
         top: 43%;
-        right: -26px;
+        right: -20px;
       
     }
 }
@@ -184,7 +184,7 @@ button{
         .project-details{
             padding-top: 20px;
             padding-left: 25px;
-                padding-right: 25px;
+            padding-right: 25px;
             transform: translateY(-60%);
         }
 
@@ -200,6 +200,7 @@ button{
         flex-direction: column !important;
         .project-details{
             transform: translateY(-60%) !important;
+            padding-right: 0 !important;
         }
 
         &:hover{

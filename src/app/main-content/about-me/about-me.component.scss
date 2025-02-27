@@ -6,6 +6,7 @@
     flex-direction: column;
     padding-left: 100px;
     padding-right: 100px;
+    max-width: 1440px;
 
     h1{
         font-size: 78px;
@@ -115,8 +116,8 @@
         position: absolute;
         top: 40px;
         right: 50px;
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
         cursor: pointer;
             
         }

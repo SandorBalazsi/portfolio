@@ -1,8 +1,9 @@
 .landing-page-wrapper {
-  height: calc(100dvh - 204px);
+  max-width: 1440px;
   padding-top: 204px;
   padding-left: 100px;
   padding-right: 100px;
+  padding-bottom: 30%;
   gap: 30%;
 
   h1 {

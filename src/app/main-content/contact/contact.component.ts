@@ -32,7 +32,7 @@ export class ContactComponent {
   mailTest = false;
 
   post = {
-    endPoint: 'https://sandor-balazsi.com.w01ffc90.kasserver.com/sendMail.php',
+    endPoint: 'https://sandor-balazsi.com./sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

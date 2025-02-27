@@ -7,9 +7,19 @@
     
 
 }
+
+.contact-background{
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .contact-wrapper{
     margin-top: 0;
-    background-color: black;
+    width: 100%;
+    max-width: 1440px;
     color: white;
     padding-left: 100px;
     padding-right: 100px;
@@ -298,16 +308,22 @@
 @media (max-width:768px) {
     .contact-wrapper{
         margin-top: -1px;
-        padding-left: 25px;
-        padding-right: 25px;
+        padding: 0;
 
         h1{
-            font-size: 52px;
+            padding-left: 25px;
+            font-size: 46px;
         }
 
         h3, span{
             text-align: center;
+            padding: 0 25px;
         }
+
+        span{
+            font-size: 18px
+        };
+
         form{
             width: 70%;
         }

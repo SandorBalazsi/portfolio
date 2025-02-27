@@ -6,6 +6,7 @@ header {
     position: fixed;
     width: calc(100% - 200px);
     top: 0;
+    left: 0;
     background-color: #FFFCF3;
     z-index: 1;
     padding-left: 100px;
@@ -125,8 +126,16 @@ header {
 
   @media (max-width:600px) {
     header{
-      width: 91%;
+      width: 90%;
       padding-left: 25px;
-      padding-right: 25px;
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width:1440px) {
+    header{
+      max-width: 1440px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
