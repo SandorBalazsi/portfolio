@@ -1,0 +1,24 @@
+.imprint-wrapper{
+    width: 100%;
+    height: calc(100vh - 232px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 92px;
+    h1{
+        font-size: 78px;
+        font-weight: 800;
+    }
+
+    h2{
+        font-size: 56px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
