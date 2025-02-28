@@ -21,6 +21,12 @@ export class ContactComponent {
     }
   }
 
+  showSnackbar(){
+    let snackbar = document.getElementById("snackbar");
+    snackbar?.classList.add('show');
+    setTimeout(function(){snackbar?.classList.remove('show');}, 3000);
+  }
+
   http = inject(HttpClient);
 
   contactData = {
@@ -53,7 +59,7 @@ export class ContactComponent {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => this.showSnackbar(),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
