@@ -1,14 +1,19 @@
 <div id="about-me" class="about-me-wrapper">
-    <h1 class="fontSyne">About Me</h1>
+    <h1 *ngIf="isEnglish" class="fontSyne">About Me</h1>
+    <h1 *ngIf="!isEnglish" class="fontSyne">Über mich</h1>
     <div class="about-me-text">
         <div class="about-me-text-left">
-        <span class="fontOverpass">Hi, I’m Sandor, a passionate Software Developer based in Switzerland. With a background in customer-facing roles and team leadership, I bring strong communication, adaptability, and problem-solving skills to tech.  I love creating user-friendly business applications and turning ideas into impactful solutions.</span><br>
-        <br><span class="fontOverpass">Let’s connect and build something great together!</span>
+        <span *ngIf="isEnglish" class="fontOverpass">Hi, I’m Sandor, a passionate Software Developer based in Switzerland. With a background in customer-facing roles and team leadership, I bring strong communication, adaptability, and problem-solving skills to tech.  I love creating user-friendly business applications and turning ideas into impactful solutions.</span>
+        <span *ngIf="!isEnglish" class="fontOverpass">Hallo, ich bin Sandor, ein leidenschaftlicher Softwareentwickler mit Sitz in der Schweiz. Mit einem Hintergrund in kundenorientierten Rollen und Teamleitung bringe ich starke Kommunikationsfähigkeiten, Anpassungsfähigkeit und Problemlösungskompetenz in die Tech-Welt ein. Ich liebe es, benutzerfreundliche Geschäftsanwendungen zu entwickeln und Ideen in wirkungsvolle Lösungen zu verwandeln.</span>
+        <br>
+        <br>
+        <span *ngIf="isEnglish" class="fontOverpass">Let’s connect and build something great together!</span>
+        <span *ngIf="!isEnglish" class="fontOverpass">Lass uns vernetzen und gemeinsam etwas Großartiges schaffen! </span>
         <div class="about-me-icons">
-            <div><div class="icon-wrapper"><img src="assets/img/house.png" alt=""></div><span class="fontOverpass">Based in Luzern</span></div>
-            <div><div class="icon-wrapper"><img src="assets/img/laptop.png" alt=""></div><span class="fontOverpass">Open to work Remote</span></div>
+            <div><div class="icon-wrapper"><img src="assets/img/house.png" alt=""></div><span *ngIf="isEnglish" class="fontOverpass">Based in Luzern</span><span *ngIf="!isEnglish" class="fontOverpass">Mit Sitz in Luzern</span></div>
+            <div><div class="icon-wrapper"><img src="assets/img/laptop.png" alt=""></div><span *ngIf="isEnglish" class="fontOverpass">Open to work Remote</span><span *ngIf="!isEnglish" class="fontOverpass">Offen für Remote-Arbeit</span></div>
         </div>
-        <button (click)="scrollToSection('contact')" class="fontOverpass">Let's talk</button>
+        <button (click)="scrollToSection('contact')" class="fontOverpass">{{ isEnglish ? "Let's talk" : 'Lass uns sprechen' }}</button>
         </div>
         <div class="profile-pic-wrapper">
         <img class="profile-pic" src="assets/img/profilbild.jpg" alt="">

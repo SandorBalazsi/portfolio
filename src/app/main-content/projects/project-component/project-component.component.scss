@@ -166,7 +166,7 @@ button{
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:1140px) {
     .project-wrapper{
         flex-direction: column;
         align-items: center;
@@ -175,8 +175,8 @@ button{
             font-size: 36px;
         }
         img, .img-border{
-            width: 316px;
-            height: 200px;
+            width: 468px;
+            height: 296px;
         }
         .project-arrow{
             top: 37%;
@@ -215,6 +215,15 @@ button{
     }}
 }
 
+@media (max-width:910px) {
+    .project-wrapper{
+        img, .img-border{
+            width: 316px;
+            height: 200px;
+        }
+    }   
+}
+
 @media (max-width:768px) {
     .project-wrapper{
         .nr-project{
@@ -232,6 +241,7 @@ button{
                 font-size: 16px;
             }
         }
+     
         .img-border{
             top: 10px;
             left: 10px;

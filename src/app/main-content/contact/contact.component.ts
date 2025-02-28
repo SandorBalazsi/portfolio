@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { LanguageService } from '../../shared/services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +14,9 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactComponent {
   checkboxChecked = false
+  isEnglish = true;
+  private languageService = inject(LanguageService);
+  private subscription: Subscription = new Subscription();
 
   changeCheckbox(){
     if(!this.checkboxChecked){
@@ -25,6 +30,21 @@ export class ContactComponent {
     let snackbar = document.getElementById("snackbar");
     snackbar?.classList.add('show');
     setTimeout(function(){snackbar?.classList.remove('show');}, 3000);
+  }
+
+  ngOnInit(): void {
+     // Get initial value
+     this.isEnglish = this.languageService.getCurrentLanguage();
+    
+     // Subscribe to changes
+     this.subscription = this.languageService.isEnglish$.subscribe(isEnglish => {
+       this.isEnglish = isEnglish;
+     });
+  }
+
+  ngOnDestroy(): void {
+    // Clean up subscription to prevent memory leaks
+    this.subscription.unsubscribe();
   }
 
   http = inject(HttpClient);

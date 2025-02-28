@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ScrollService } from '../../shared/services/scroll.service';
+import { LanguageService } from '../../shared/services/language.service';
+import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
 
 export class AboutMeComponent {
-
+  isEnglish = true;
+  private languageService = inject(LanguageService);
+  private subscription: Subscription = new Subscription();
   private scrollHandler: () => void; 
 
 constructor(private scrollService: ScrollService){
@@ -38,12 +43,25 @@ constructor(private scrollService: ScrollService){
     );
   }
 
+
+
   ngOnInit(): void {
     window.addEventListener('scroll', this.scrollHandler);
+
+     // Get initial value
+     this.isEnglish = this.languageService.getCurrentLanguage();
+    
+     // Subscribe to changes
+     this.subscription = this.languageService.isEnglish$.subscribe(isEnglish => {
+       this.isEnglish = isEnglish;
+     });
   }
 
   ngOnDestroy(): void {
     window.removeEventListener('scroll', this.scrollHandler);
+
+    // Clean up subscription to prevent memory leaks
+    this.subscription.unsubscribe();
   }
 
 scrollToSection(elementId:string):void{

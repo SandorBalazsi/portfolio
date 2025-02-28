@@ -1,7 +1,8 @@
 <div id="portfolio" class="projects-wrapper">
     <div  class="title">
         <h1 class="fontSyne">Portfolio</h1>
-        <span class="fontOverpass">Explore a selection of my work here - Interact with <br> projects to see my skills in action.</span>
+        <span *ngIf="isEnglish" class="fontOverpass">Explore a selection of my work here - Interact with <br> projects to see my skills in action.</span>
+        <span *ngIf="!isEnglish" class="fontOverpass">Entdecke eine Auswahl meiner Arbeiten hier. <br> Schau dir die Projekte an und erlebe meine Skills in Aktion!</span>
     </div>
     <div class="projects">
 <app-project-component
@@ -9,7 +10,8 @@
 [imageSrc]="'assets/img/join.png'"
 [title]="'Join'"
 [skills]="'HTML | CSS | JavaScript | Firebase '"
-[description]="'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.'"
+[descriptionEn]="'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.'"
+[descriptionDe]="'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.'"
 [reverse]="false"
 [githubLink]="'https://github.com/Patrick-Gogolin/JOIN.git'"
 [liveLink]="'https://join.sandor-balazsi.com'"
@@ -19,7 +21,9 @@
 [imageSrc]="'assets/img/pollo_loco.png'"
 [title]="'El Pollo Loco'"
 [skills]="'JavaScript | HTML | CSS'"
-[description]="'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe collect some Coins and Chili bottles for defeating the enemy.'"
+[descriptionEn]="'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe collect some Coins and Chili bottles for defeating the enemy.'"
+[descriptionDe]="'Ein einfaches Jump-and-Run-Spiel basierend auf OOP. Hilf Pepe, Münzen und Chili-Flaschen zu sammeln, um den Feind zu besiegen.'"
+
 [reverse]="true"
 [githubLink]="'https://github.com/SandorBalazsi/El-Pollo-Loco/tree/fb31af02c31a97dce2dd4a0078c615c4b1b212e8/el_pollo_loco'"
 [liveLink]="'https://el-pollo-loco.sandor-balazsi.com'"
@@ -29,7 +33,8 @@
 [imageSrc]="'assets/img/pokedex.png'"
 [title]="'Pokedex'"
 [skills]="'JavaScript | HTML | CSS | Api'"
-[description]="'Based on the PokéAPI a simple library that provides and catalogues pokemon information.'"
+[descriptionEn]="'Based on the PokéAPI a simple library that provides and catalogues pokemon information.'"
+[descriptionDe]="'Basierend auf der PokéAPI eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.'"
 [reverse]="false"
 [githubLink]="'https://github.com/SandorBalazsi/pokedex'"
 [liveLink]="'https://pokedex.sandor-balazsi.com'"

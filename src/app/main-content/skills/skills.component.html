@@ -1,6 +1,6 @@
 <div id="skills" class="skills-wrapper">
     <div class="inner-window">
-        <h1 class="fontSyne">My Skills</h1>
+        <h1 class="fontSyne">{{ isEnglish ? "My skills" : 'Meine skills' }}</h1>
         <div>
             <div class="tech-icon"><img src="assets/img/angular.png" alt=""><span class="fontOverpass">Angular</span></div>
             <div class="tech-icon"><img src="assets/img/ts.png" alt=""><span class="fontOverpass">TypeScript</span></div>
@@ -13,8 +13,11 @@
             <div class="tech-icon"><img src="assets/img/api.png" alt=""><span class="fontOverpass">Rest Api</span></div>
             <div class="tech-icon"><img src="assets/img/mat.png" alt=""><span class="fontOverpass">Material Design</span></div>
         </div>
-        <div class="missed-skill"><img src="assets/img/learning.png" alt=""><span class="fontOverpass">Don't see the skill you need? <a class="fontOverpass" [href]="mailto('sandor.b@gmx.ch','Let\'s Connect!')">Contact me</a> I'm always ready to learn!</span></div>
-    </div>
+        <div class="missed-skill"><img src="assets/img/learning.png" alt="">
+            <span *ngIf="isEnglish" class="fontOverpass">Don't see the skill you need? <a class="fontOverpass" [href]="mailto('sandor.b@gmx.ch','Let\'s Connect!')">{{ isEnglish ? "Contact me" : 'Schreibe mir' }}</a> I'm always ready to learn!</span>
+            <span *ngIf="!isEnglish" class="fontOverpass">Fehlt die Fähigkeit, die du suchst? <a class="fontOverpass" [href]="mailto('sandor.b@gmx.ch','Let\'s Connect!')">{{ isEnglish ? "Contact me" : 'Schreibe mir' }}</a> Ich bin immer bereit, dazuzulernen!</span>
+        </div>
+        </div>
     </div>
    
     <div id="scroll-animation-second" class="arrow-wrapper"><div class="arrow-left"><div id="animation-second" class="arrow-line"></div></div></div>

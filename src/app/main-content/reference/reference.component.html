@@ -1,26 +1,30 @@
 <div class="reference-wrapper">
     <div class="reference-title">
-        <h1 class="fontSyne">References</h1>
-        <span class="fontOverpass">I thrive both independently and as part of a team. Here's<br> what my colleagues have to say about working with me.</span>
+        <h1 class="fontSyne">{{ isEnglish ? "References" : 'Referenzen' }}</h1>
+        <span *ngIf="isEnglish" class="fontOverpass">I thrive both independently and as part of a team. Here's<br> what my colleagues have to say about working with me.</span>
+        <span *ngIf="!isEnglish" class="fontOverpass">Ich arbeite sowohl selbstständig als auch im Team erfolgreich. Hier ist,<br> was meine Kollegen über die Zusammenarbeit mit mir zu sagen haben.</span>
     </div>
     <div class="reference-card-wrapper">
         <div>
             <img src="assets/img/quote.png" alt="">
             <span class="fontSyne name">J. Krüger</span>
             <span class="fontOverpass"> Team Partner</span>
-            <p class="fontOverpass">Sandor is a very communicative and helpful team member who significantly advanced our group work with his technical knowledge and honest feedback. I am convinced that, thanks to his empathetic nature, he will quickly adapt to any group dynamic. Even after the project, exchanging experiences with him has always been valuable.</p>
+            <p *ngIf="isEnglish" class="fontOverpass">Sandor is a very communicative and helpful team member who significantly advanced our group work with his technical knowledge and honest feedback. I am convinced that, thanks to his empathetic nature, he will quickly adapt to any group dynamic. Even after the project, exchanging experiences with him has always been valuable.</p>
+            <p *ngIf="!isEnglish" class="fontOverpass">Sandor ist ein sehr kommunikativer und hilfsbereiter Teammitglied, der unsere Gruppenarbeit mit seinem technischen Wissen und ehrlichem Feedback maßgeblich vorangetrieben hat. Ich bin überzeugt, dass er sich dank seiner empathischen Art schnell an jede Gruppendynamik anpassen wird. Sogar nach dem Projekt war der Austausch von Erfahrungen mit ihm immer wertvoll.</p>
         </div>
         <div>
             <img src="assets/img/quote.png" alt="">
             <span class="fontSyne name">P. Kanert</span>
             <span class="fontOverpass">Team Partner</span>
-            <p class="fontOverpass">Sandor always brought great energy to the team and made even the toughest tasks more enjoyable.</p>
+            <p *ngIf="isEnglish" class="fontOverpass">Sandor always brought great energy to the team and made even the toughest tasks more enjoyable.</p>
+            <p *ngIf="!isEnglish" class="fontOverpass">Sandor brachte immer viel Energie ins Team und verwandelte selbst die härtesten Aufgaben angenehmer.</p>
         </div>
         <div>
             <img src="assets/img/quote.png" alt="">
             <span class="fontSyne name">P. Gogolin</span>
             <span class="fontOverpass">Team Partner</span>
-            <p class="fontOverpass">It was a great to work with Sandor. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.</p>
+            <p *ngIf="isEnglish" class="fontOverpass">It was a great to work with Sandor. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.</p>
+            <p *ngIf="!isEnglish" class="fontOverpass">Es war großartig, mit Sandor zu arbeiten. Was das Wohlbefinden der Gruppenmitglieder betrifft, war er stets präsent und verfügbar, um zuzuhören und anderen zu helfen – dabei immer mit einem großartigen Sinn für Humor.</p>
         </div>
     </div>
     <div id="scroll-animation-third" class="arrow-wrapper"><div class="arrow-right"><div id="animation-third" class="arrow-line"></div></div></div>

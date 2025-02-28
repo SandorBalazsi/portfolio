@@ -1,19 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../shared/services/language.service';
+import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+
+  isEnglish = true;
+  private languageService = inject(LanguageService);
+  private subscription: Subscription = new Subscription();
 
   mailto(emailAddress: string, emailSubject: any) {
     return "mailto:" + emailAddress + "?subject=" + emailSubject
   }
 
    private scrollHandler: () => void; 
+ 
   
   constructor(){
    this.scrollHandler = () => {
@@ -42,10 +50,19 @@ export class SkillsComponent {
   
     ngOnInit(): void {
       window.addEventListener('scroll', this.scrollHandler);
+      // Get initial value
+     this.isEnglish = this.languageService.getCurrentLanguage();
+    
+     // Subscribe to changes
+     this.subscription = this.languageService.isEnglish$.subscribe(isEnglish => {
+       this.isEnglish = isEnglish;
+     });
     }
   
     ngOnDestroy(): void {
       window.removeEventListener('scroll', this.scrollHandler);
+        // Clean up subscription to prevent memory leaks
+    this.subscription.unsubscribe();
     }
   
 }
