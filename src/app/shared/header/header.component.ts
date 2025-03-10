@@ -20,7 +20,7 @@ export class HeaderComponent {
 navService= inject(NavigationService);
 languageService = inject(LanguageService);
 isActive = false;
-isEnglish = true;
+isEnglish = false;
 
 constructor(){
   this.navService.navOpen$.subscribe(open => {

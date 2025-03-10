@@ -32,7 +32,7 @@
             <div class="privacy-input-p">
             <input #checkbox [(ngModel)]="checkboxChecked" name="checkbox" (click)="changeCheckbox()" class="checkbox" type="checkbox" required>
             <p *ngIf="isEnglish" class="fontOverpass">I've read the <a routerLink="/imprint" routerLinkActive ="active" class="privacy-link" ariaCurrentWhenActive="page">privacy Policy</a> and agree to the processing of my data as outlined.</p>
-            <p *ngIf="!isEnglish" class="fontOverpass">Ich habe die <a class="privacy-link" href="">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten gemäß den darin enthaltenen Informationen zu.</p>
+            <p *ngIf="!isEnglish" class="fontOverpass">Ich habe die <a class="privacy-link" routerLink="/legal-notice" ariaCurrentWhenActive="page">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten gemäß den darin enthaltenen Informationen zu.</p>
             </div>
             <div class="privacy-warning">
             <span class="warning fontOverpass"

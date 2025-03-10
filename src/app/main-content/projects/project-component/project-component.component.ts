@@ -41,12 +41,10 @@ ngOnDestroy(): void {
 
 openGithub(){
   window.open(this.githubLink, '_blank');
-  console.log('click worked');
 }
 
 openLive(){
   window.open(this.liveLink, '_blank');
-  console.log('click worked');
 }
 
 
