@@ -201,8 +201,10 @@ button {
       transform: translateY(-60%) !important;
       padding-right: 0 !important;
     }
+  }
 
-    &:hover {
+  .hover-effect {
+    &.reverse {
       .project-details {
         padding-top: 20px;
         padding-left: 25px;

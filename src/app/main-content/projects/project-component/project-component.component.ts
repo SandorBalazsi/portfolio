@@ -31,12 +31,41 @@ export class ProjectComponentComponent {
 
   isEnglish: boolean = true;
   private subscription: Subscription = new Subscription();
+  private scrollHandler: () => void;
   isMobileDevice = false;
   @ViewChild('projectWrapper') projectWrapperRef: ElementRef | undefined;
 
-  constructor(private languageService: LanguageService) {}
+  constructor(private languageService: LanguageService) {
+    /**
+     * Initializes the scroll handler function that adds or removes animation classes
+     * based on the visibility of the target element.
+     */
+    this.scrollHandler = () => {
+      const element = this.projectWrapperRef?.nativeElement;
+      if (element) {
+        if (this.isElementVisible(element)) {
+          this.onMouseOver();
+        } else {
+          this.onMouseLeft();
+        }
+      }
+    };
+  }
+
+  /**
+   * Checks if the given element is visible in the viewport.
+   * @param element - The DOM element to check.
+   * @returns True if the element is visible, false otherwise.
+   */
+  private isElementVisible(element: Element): boolean {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementBottom = elementTop + element.getBoundingClientRect().height;
+
+    return elementBottom > 0 && elementTop < window.innerHeight;
+  }
 
   ngOnInit(): void {
+    window.addEventListener('scroll', this.scrollHandler);
     this.isEnglish = this.languageService.getCurrentLanguage();
     this.subscription = this.languageService.isEnglish$.subscribe(
       (isEnglish) => {
@@ -50,6 +79,7 @@ export class ProjectComponentComponent {
   }
 
   ngOnDestroy(): void {
+    window.removeEventListener('scroll', this.scrollHandler);
     this.subscription.unsubscribe();
   }
 
@@ -66,6 +96,7 @@ export class ProjectComponentComponent {
   onMouseLeft() {
     this.projectWrapperRef?.nativeElement.classList.remove('hover-effect');
   }
+
 
   /**
    * Opens the GitHub link in a new browser tab.
