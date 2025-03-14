@@ -12,15 +12,12 @@
   justify-content: space-between;
   z-index: 1;
   scrollbar-width: none;
-  
-  /* Start off-screen */
   transform: translateY(100%);
   opacity: 0;
   transition: transform 0.5s ease-out, opacity 0.3s ease-out;
 
-  overflow-y: auto; /* Makes the nav scrollable */
-  overflow-x: hidden; /* Disable horizontal scrolling */
-
+  overflow-y: auto;
+  overflow-x: hidden;
 
   a {
     text-decoration: none;
@@ -52,7 +49,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 4px;;
+        width: 4px;
         height: 31%;
         background-color: black;
         transition: opacity 0.1s ease;
@@ -73,17 +70,25 @@
         opacity: 0;
       }
 
-      &:hover::after{
-        animation: borderEffect 0.3s forwards ;
+      &:hover::after {
+        animation: borderEffect 0.3s forwards;
       }
 
-
-    @keyframes borderEffect {
-      0% { width: 7%; left: 0; }
-      50% { width: 100%; left: 0; }
-      100% { width: 42%; left: unset; right: 0;}
-    }
-
+      @keyframes borderEffect {
+        0% {
+          width: 7%;
+          left: 0;
+        }
+        50% {
+          width: 100%;
+          left: 0;
+        }
+        100% {
+          width: 42%;
+          left: unset;
+          right: 0;
+        }
+      }
     }
   }
 
@@ -94,7 +99,7 @@
     height: 0;
   }
 
-  .nav-background{
+  .nav-background {
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -167,57 +172,56 @@
   display: flex;
 }
 
-@media (max-width:1024px) {
-  .navigation-wrapper{
+@media (max-width: 1024px) {
+  .navigation-wrapper {
     justify-content: space-between;
-    a{
+    a {
       width: 278px;
       height: 80px;
       font-size: 46px;
     }
-    .nav-menu{
+    .nav-menu {
       height: 65%;
       justify-content: center;
     }
 
-    .nav-footer{
+    .nav-footer {
       padding-bottom: 128px;
-    flex-direction: column;
-    gap: 56px;
+      flex-direction: column;
+      gap: 56px;
     }
 
-    .nav-footer-left{
-      h1{
+    .nav-footer-left {
+      h1 {
         font-size: 45px;
       }
     }
 
-    .nav-footer-right{
+    .nav-footer-right {
       align-self: end;
     }
   }
 }
 
-@media (max-width:768px) {
-  .nav-footer{
+@media (max-width: 768px) {
+  .nav-footer {
     padding-top: 70px;
   }
 
-  .contact-triangle{
+  .contact-triangle {
     border-bottom: 170px solid black !important;
   }
 
-  .nav-footer-left{
-    h1{
+  .nav-footer-left {
+    h1 {
       margin-left: 25px !important;
     }
-    a{
+    a {
       left: 42px !important;
     }
   }
 
-  .nav-footer-right{
+  .nav-footer-right {
     margin-right: 25px !important;
   }
-
 }

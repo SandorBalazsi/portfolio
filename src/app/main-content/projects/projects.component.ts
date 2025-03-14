@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [ProjectComponentComponent, CommonModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
   isEnglish = true;
@@ -17,19 +17,19 @@ export class ProjectsComponent {
   private subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
-     // Get initial value
-     this.isEnglish = this.languageService.getCurrentLanguage();
-    
-     // Subscribe to changes
-     this.subscription = this.languageService.isEnglish$.subscribe(isEnglish => {
-       this.isEnglish = isEnglish;
-     });
+    // Get initial value
+    this.isEnglish = this.languageService.getCurrentLanguage();
+
+    // Subscribe to changes
+    this.subscription = this.languageService.isEnglish$.subscribe(
+      (isEnglish) => {
+        this.isEnglish = isEnglish;
+      }
+    );
   }
 
   ngOnDestroy(): void {
     // Clean up subscription to prevent memory leaks
     this.subscription.unsubscribe();
   }
-
-
 }

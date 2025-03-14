@@ -1,217 +1,211 @@
+.about-me-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 1440px;
 
+  h1 {
+    font-size: 78px;
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: 48px;
+    transition: color 0.15s;
 
-
-.about-me-wrapper{
-    display: flex;
-    flex-direction: column;
-    padding-left: 100px;
-    padding-right: 100px;
-    max-width: 1440px;
-
-    h1{
-        font-size: 78px;
-        font-weight: 800;
-        margin: 0;
-        margin-bottom: 48px;
-        transition: color 0.15s;
-
-        &:hover{
-            color: #00BC8F;
-        }
+    &:hover {
+      color: #00bc8f;
     }
+  }
 }
 
-.about-me-text{
-    display: flex;
-    font-weight: 400;
-    font-size: 22px;
-    gap: 87px;
-    
-    padding-bottom: 29px;
+.about-me-text {
+  display: flex;
+  font-weight: 400;
+  font-size: 22px;
+  gap: 87px;
 
-    button{
-        margin-top: 40px;
-        padding: 20px 60px 20px 60px;
-        background-color: unset;
-        border: 4px black solid;
-        font-size: 23px;
-        cursor: pointer;
-        align-self: center;
-        transition: font-weight 0.5s, padding 0.5s;
-        &:hover{
-            font-weight: 700;
-            padding: 20px 80px 20px 80px;
-        }
+  padding-bottom: 29px;
 
-    }
-}
-
-.about-me-text-left{
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.about-me-icons{
-    padding-top: 48px;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-
-    &>div{
-        display: flex;
-        gap: 8px;
-        align-items: center;
-       
-    }
-
-}
-
-.icon-wrapper{
-         width: 40px;
-        height: 40px;
-}
-
-.profile-pic-wrapper{
-    position: relative;
-}
-
-.profile-pic{
-    
-    width: 533px;
-    height: 533px;
-    
-
-    &:hover + .profile-pic-border,
-    & + .profile-pic-border:hover {
-        display: block;
-    }
-
-}
-
-.profile-pic-border{
-    display:none;
-    top: 16px;
+  button {
+    margin-top: 40px;
+    padding: 20px 60px 20px 60px;
+    background-color: unset;
     border: 4px black solid;
-    position: absolute;
-    width: 533px;
-    height: 533px;
-    right: -24px;
-}
-
-.animation{
-    animation: moveArrow 1s ease forwards;
-    animation-delay: 0.5s;
-}
-
-
-.arrow-wrapper{
-    width: 100%;
-    height: 300px;
-    position: relative;
-    padding-bottom: 100px;
-    
-    >div{
-        position: absolute;
-        top: 40px;
-        right: 50px;
-        width: 280px;
-        height: 280px;
-        cursor: pointer;
-            
-        }
-
-        .arrow-line{
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 4px;
-            height: 215px;
-            background-color: black;
-            transform-origin: top;
-            rotate: 45deg;
-            transition: height 0.3s ease;
-
-            &::before{
-                content: '';
-                position: absolute;
-                transform-origin: top;
-                bottom: -25px;
-                right: 57px;
-                width: 4px;
-                height: 82px;
-                background-color: black;
-                rotate: -45deg;
-            }
-
-            &::after{
-                content: '';
-                position: absolute;
-                transform-origin: bottom left;
-                height: 4px;
-                width: 82px;
-                background-color: black;
-                rotate: -45deg;
-                right: -80px;
-                bottom: -2px ;
-
-            }
-
-            @keyframes moveArrow {
-                0% {height: 215px; top: 0; right: 0;}
-                50% {height: 317px; top: 0; right: 0;}
-                100%{height: 215px; top: 102px; right: 102px;}
-            }
-        }
-
+    font-size: 23px;
+    cursor: pointer;
+    align-self: center;
+    transition: font-weight 0.5s, padding 0.5s;
+    &:hover {
+      font-weight: 700;
+      padding: 20px 80px 20px 80px;
     }
-        
+  }
+}
 
+.about-me-text-left {
+  display: flex;
+  flex-direction: column;
+}
 
+.about-me-icons {
+  padding-top: 48px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+}
+
+.profile-pic {
+  width: 533px;
+  height: 533px;
+
+  &:hover + .profile-pic-border,
+  & + .profile-pic-border:hover {
+    display: block;
+  }
+}
+
+.profile-pic-border {
+  display: none;
+  top: 16px;
+  border: 4px black solid;
+  position: absolute;
+  width: 533px;
+  height: 533px;
+  right: -24px;
+}
+
+.animation {
+  animation: moveArrow 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.arrow-wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  padding-bottom: 100px;
+
+  > div {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    width: 280px;
+    height: 280px;
+    cursor: pointer;
+  }
+
+  .arrow-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 215px;
+    background-color: black;
+    transform-origin: top;
+    rotate: 45deg;
+    transition: height 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      transform-origin: top;
+      bottom: -25px;
+      right: 57px;
+      width: 4px;
+      height: 82px;
+      background-color: black;
+      rotate: -45deg;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform-origin: bottom left;
+      height: 4px;
+      width: 82px;
+      background-color: black;
+      rotate: -45deg;
+      right: -80px;
+      bottom: -2px;
+    }
+
+    @keyframes moveArrow {
+      0% {
+        height: 215px;
+        top: 0;
+        right: 0;
+      }
+      50% {
+        height: 317px;
+        top: 0;
+        right: 0;
+      }
+      100% {
+        height: 215px;
+        top: 102px;
+        right: 102px;
+      }
+    }
+  }
+}
 
 @media (max-width: 1024px) {
-    .about-me-text{
-        flex-direction: column;
-    }
+  .about-me-text {
+    flex-direction: column;
+  }
 
-    .profile-pic-wrapper{
-        align-self: center;
-    }
+  .profile-pic-wrapper {
+    align-self: center;
+  }
 
-    .arrow-wrapper{
-        display: flex;
-        justify-content: center;
-        
-        >div{
-            right: unset;
-        }
-    
+  .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+
+    > div {
+      right: unset;
     }
+  }
 }
 
-@media (max-width:600px) {
-    .about-me-wrapper{
-        padding-left: 25px;
-        padding-right: 25px;
-        h1{
-            font-size: 36px;
-        }
+@media (max-width: 600px) {
+  .about-me-wrapper {
+    padding-left: 25px;
+    padding-right: 25px;
+    h1 {
+      font-size: 36px;
     }
-    .about-me-text-left{
-        font-size: 20px;
-    }
+  }
+  .about-me-text-left {
+    font-size: 20px;
+  }
 
-    .profile-pic, .profile-pic-border{
-        width: 337px;
-        height: 337px;
-    }
+  .profile-pic,
+  .profile-pic-border {
+    width: 337px;
+    height: 337px;
+  }
 }
 
-@media (max-width:390px) {
-
-    .profile-pic, .profile-pic-border{
-        width: 227px;
-        height: 227px;
-    }
+@media (max-width: 390px) {
+  .profile-pic,
+  .profile-pic-border {
+    width: 227px;
+    height: 227px;
+  }
 }

@@ -1,33 +1,36 @@
-.legal-notice-wrapper{
-    max-width: 1440px;
+.legal-notice-wrapper {
+  max-width: 1440px;
   padding-top: 124px;
   padding-left: 100px;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 80px;
 
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     padding-left: 25px;
     padding-right: 25px;
   }
 }
 
-h1{
-    font-family: 'Syne';
-    @media (max-width:600px) {
-        font-size: 1.5em;
-    }
+h1 {
+  font-family: "Syne";
+  @media (max-width: 600px) {
+    font-size: 1.5em;
+  }
 }
 
-h2{
-    font-family: 'Syne';
+h2 {
+  font-family: "Syne";
 }
 
-p, a, li, h3{
-    font-family: 'Overpass';
+p,
+a,
+li,
+h3 {
+  font-family: "Overpass";
 }
 
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }

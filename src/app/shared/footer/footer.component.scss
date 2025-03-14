@@ -1,4 +1,4 @@
-.footer-background{
+.footer-background {
   background-color: black;
   width: 100vw;
   display: flex;
@@ -17,7 +17,6 @@
   justify-content: space-evenly;
   width: 100%;
   max-width: 1440px;
-  
 
   .footer-logo {
     display: flex;
@@ -48,7 +47,7 @@
       right: 0;
       top: -108px;
       transition: transform 0.3s ease-in-out;
-      transform-origin: bottom center; /* Keeps the bottom part fixed */
+      transform-origin: bottom center;
       cursor: pointer;
 
       &:hover {
@@ -66,69 +65,68 @@
       font-weight: 400;
       padding: 5px 19px 8px 10px;
       transition: all 0.3s ease;
+      cursor: pointer;
 
       &:hover {
         padding: 5px 10px 8px 15px;
         font-weight: 800;
 
         &::after {
-          transform: translateX(0) scaleX(1); /* Slide in and expand */
-          opacity: 1; /* Fade in the border */
+          transform: translateX(0) scaleX(1);
+          opacity: 1;
         }
       }
 
       &::after {
-        content: ""; /* This is necessary for the pseudo element to work. */
+        content: "";
         position: absolute;
-        bottom: 6px; /* Position at the bottom of the parent element */
-        right: 11px; /* Align the border to the right */
-        height: 2px; /* Thickness of the border */
-        width: 45%; /* Full width for the animation */
-        background-color: #00bc8f; /* Border color */
-        transform: translateX(-60%); /* Start at 60% width */
-        transform-origin: left; /* Start animation from the left */
-        opacity: 0; /* Initially invisible */
-        transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+        bottom: 6px;
+        right: 11px;
+        height: 2px;
+        width: 45%;
+        background-color: #00bc8f;
+        transform: translateX(-60%);
+        transform-origin: left;
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
       }
     }
   }
 }
 
-
-@media (max-width:768px) {
-  .footer-wrapper{
+@media (max-width: 768px) {
+  .footer-wrapper {
     padding-left: 0;
     padding-right: 0;
     flex-direction: column-reverse;
     align-items: center;
   }
-  .scroll-up{
+  .scroll-up {
     display: none;
   }
 
-  .arrow{
+  .arrow {
     display: none;
   }
 
-  .logo{
+  .logo {
     align-self: center;
     padding-top: 28px;
     padding-bottom: 28px;
   }
 
-  .copyright{
+  .copyright {
     padding-bottom: 79px;
   }
 
-  .legal-notice{
+  .legal-notice {
     bottom: -230px !important;
     right: 43px !important;
   }
-
 }
 
-@media (min-width:1920px) {
-  .footer-wrapper{
+@media (min-width: 1920px) {
+  .footer-wrapper {
     justify-content: space-evenly;
     width: 100vw;
   }

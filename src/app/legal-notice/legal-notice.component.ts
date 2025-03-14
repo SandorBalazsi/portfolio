@@ -1,4 +1,4 @@
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../shared/services/language.service';
 import { Subscription } from 'rxjs';
@@ -8,27 +8,27 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './legal-notice.component.html',
-  styleUrl: './legal-notice.component.scss'
+  styleUrl: './legal-notice.component.scss',
 })
 export class LegalNoticeComponent {
-
   isEnglish = true;
-    private languageService = inject(LanguageService);
-    private subscription: Subscription = new Subscription();
+  private languageService = inject(LanguageService);
+  private subscription: Subscription = new Subscription();
 
-    ngOnInit(): void {
-  
-       // Get initial value
-       this.isEnglish = this.languageService.getCurrentLanguage();
-      
-       // Subscribe to changes
-       this.subscription = this.languageService.isEnglish$.subscribe(isEnglish => {
-         this.isEnglish = isEnglish;
-       });
-    }
-  
-    ngOnDestroy(): void {  
-      // Clean up subscription to prevent memory leaks
-      this.subscription.unsubscribe();
-    }
+  ngOnInit(): void {
+    // Get initial value
+    this.isEnglish = this.languageService.getCurrentLanguage();
+
+    // Subscribe to changes
+    this.subscription = this.languageService.isEnglish$.subscribe(
+      (isEnglish) => {
+        this.isEnglish = isEnglish;
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    // Clean up subscription to prevent memory leaks
+    this.subscription.unsubscribe();
+  }
 }

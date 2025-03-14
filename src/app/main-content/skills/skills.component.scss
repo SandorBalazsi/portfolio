@@ -1,5 +1,4 @@
 .skills-wrapper {
-  
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,10 +9,10 @@
 
   img {
     width: auto;
-    height: auto; 
+    height: auto;
     max-width: 75px;
-    max-height: 75px; 
-    display: block; 
+    max-height: 75px;
+    display: block;
   }
 
   h1 {
@@ -29,8 +28,8 @@
     padding: 10px;
     transition: color 0.15s;
 
-    &:hover{
-        color: #00BC8F;
+    &:hover {
+      color: #00bc8f;
     }
   }
 
@@ -69,184 +68,190 @@
         }
 
         span {
-            
-            text-align: center;
-            font-size: 16px;
-            font-weight: 700;
-            
+          text-align: center;
+          font-size: 16px;
+          font-weight: 700;
         }
       }
     }
   }
 }
 
-.missed-skill{
-    display: flex !important;
-    font-size: 22px;
-    letter-spacing: 1px;
-    padding: 48px 0 119px 0 !important;
-    gap: 0 !important;
+.missed-skill {
+  display: flex !important;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding: 48px 0 119px 0 !important;
+  gap: 0 !important;
 
-    span{
-        align-self: flex-end;
-        padding-left: 28px;
-        width: 70%;
-    }
+  span {
+    align-self: flex-end;
+    padding-left: 28px;
+    width: 70%;
+  }
 
-    a{
-      text-decoration: none;
-      color: #00bc8f;
-      padding: 5px 19px 8px 10px;
-      position: relative;
-      transition: all 0.3s ease;
-      font-weight: 400;
-  
-      &:hover {
-        font-weight: 800;
-  
-        &::after {
-          transform: translateX(0) scaleX(1); /* Slide in and expand */
-          opacity: 1; /* Fade in the border */
-        }
-      }
-  
+  a {
+    text-decoration: none;
+    color: #00bc8f;
+    padding: 5px 19px 8px 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 400;
+
+    &:hover {
+      font-weight: 800;
+
       &::after {
-        content: ""; /* This is necessary for the pseudo element to work. */
-        position: absolute;
-        bottom: 6px; /* Position at the bottom of the parent element */
-        right: 11px; /* Align the border to the right */
-        height: 2px; /* Thickness of the border */
-        width: 45%; /* Full width for the animation */
-        background-color: #00bc8f; /* Border color */
-        transform: translateX(-60%); /* Start at 60% width */
-        transform-origin: left bottom; /* Start animation from the left */
-        opacity: 0; /* Initially invisible */
-        transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+        transform: translateX(0) scaleX(1); /* Slide in and expand */
+        opacity: 1; /* Fade in the border */
       }
     }
+
+    &::after {
+      content: ""; /* This is necessary for the pseudo element to work. */
+      position: absolute;
+      bottom: 6px; /* Position at the bottom of the parent element */
+      right: 11px; /* Align the border to the right */
+      height: 2px; /* Thickness of the border */
+      width: 45%; /* Full width for the animation */
+      background-color: #00bc8f; /* Border color */
+      transform: translateX(-60%); /* Start at 60% width */
+      transform-origin: left bottom; /* Start animation from the left */
+      opacity: 0; /* Initially invisible */
+      transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+    }
+  }
 }
 
-.animation{
+.animation {
   animation: moveArrow 1s ease forwards;
   animation-delay: 0.5s;
 }
 
-.arrow-wrapper{
+.arrow-wrapper {
   width: 100%;
   height: 280px;
   position: relative;
   padding-bottom: 80px;
-  
-  >div{
-      position: absolute;
-      top: 75px;
-      left: 140px;
-      width: 280px;
-      height: 280px;
-      cursor: pointer;
-          
-      }
 
-      .arrow-line {
-        position: absolute;
-        top: 0;
-        left: 0;  /* Changed from right to left */
-        width: 4px;
-        height: 215px;
-        background-color: black;
-        transform-origin: top;
-        rotate: -45deg;  /* Changed from 45deg to -45deg */
-        transition: height 0.3s ease;
-    
-        &::before {
-            content: '';
-            position: absolute;
-            transform-origin: top;
-            bottom: -25px;
-            left: 57px;  /* Changed from right to left */
-            width: 4px;
-            height: 82px;
-            background-color: black;
-            rotate: 45deg;  /* Changed from -45deg to 45deg */
-        }
-    
-        &::after {
-            content: '';
-            position: absolute;
-            transform-origin: bottom right;  /* Changed from bottom left */
-            height: 4px;
-            width: 82px;
-            background-color: black;
-            rotate: 45deg;  /* Changed from -45deg to 45deg */
-            left: -80px;  /* Changed from right to left */
-            bottom: -2px;
-        }
-    
-        @keyframes moveArrow {
-            0% {height: 215px; top: 0; left: 0;}  /* Changed right to left */
-            50% {height: 317px; top: 0; left: 0;}  /* Changed right to left */
-            100% {height: 215px; top: 102px; left: 102px;}  /* Changed right to left */
-        }
-    
-      }
-
+  > div {
+    position: absolute;
+    top: 75px;
+    left: 140px;
+    width: 280px;
+    height: 280px;
+    cursor: pointer;
   }
-      
+
+  .arrow-line {
+    position: absolute;
+    top: 0;
+    left: 0; /* Changed from right to left */
+    width: 4px;
+    height: 215px;
+    background-color: black;
+    transform-origin: top;
+    rotate: -45deg; /* Changed from 45deg to -45deg */
+    transition: height 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      transform-origin: top;
+      bottom: -25px;
+      left: 57px; /* Changed from right to left */
+      width: 4px;
+      height: 82px;
+      background-color: black;
+      rotate: 45deg; /* Changed from -45deg to 45deg */
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform-origin: bottom right; /* Changed from bottom left */
+      height: 4px;
+      width: 82px;
+      background-color: black;
+      rotate: 45deg; /* Changed from -45deg to 45deg */
+      left: -80px; /* Changed from right to left */
+      bottom: -2px;
+    }
+
+    @keyframes moveArrow {
+      0% {
+        height: 215px;
+        top: 0;
+        left: 0;
+      } /* Changed right to left */
+      50% {
+        height: 317px;
+        top: 0;
+        left: 0;
+      } /* Changed right to left */
+      100% {
+        height: 215px;
+        top: 102px;
+        left: 102px;
+      } /* Changed right to left */
+    }
+  }
+}
 
 @media (max-width: 1024px) {
-  .skills-wrapper{
-    h1{
+  .skills-wrapper {
+    h1 {
       font-size: 52px;
     }
-    .inner-window{
-      >div{
+    .inner-window {
+      > div {
         padding: 63px 16px 0 16px;
         gap: 50px;
       }
-      .missed-skill{
+      .missed-skill {
         padding: 42px 0 48px 0 !important;
         font-size: 20px;
       }
     }
   }
-  .arrow-wrapper{
+  .arrow-wrapper {
     display: flex;
     justify-content: center;
     margin-left: 0;
 
-    >div{
+    > div {
       left: unset;
     }
-    .arrow{
+    .arrow {
       position: unset;
     }
   }
 }
 
-@media (max-width:768px) {
-  .skills-wrapper{
-    h1{
+@media (max-width: 768px) {
+  .skills-wrapper {
+    h1 {
       font-size: 34px;
     }
-    .inner-window{
-      >div{
+    .inner-window {
+      > div {
         gap: 16px;
       }
     }
   }
 }
 
-@media (max-width:600px) {
-  .skills-wrapper{
+@media (max-width: 600px) {
+  .skills-wrapper {
     padding-left: 25px;
     padding-right: 25px;
   }
-  .missed-skill{
+  .missed-skill {
     flex-wrap: nowrap !important;
     flex-direction: row;
     gap: 8px !important;
     padding: 48px 8px 119px 8px !important;
-    span{
+    span {
       padding-left: 0;
     }
   }

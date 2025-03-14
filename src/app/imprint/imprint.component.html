@@ -1,16 +1,38 @@
 <div class="imprint-wrapper">
-    <h1 class="title fontSyne">Imprint</h1>
-    <div>
-        <h2 class="fontOverpass">Service Provider</h2>
-        <div class="details">
-            <span class="fontOverpass">Sandor Balazsi</span>
-            <span class="fontOverpass">Büttenenring 8.</span>
-            <span class="fontOverpass">6006 Luzern</span>
-        </div>
+  <h1 *ngIf="!isEnglish" class="title fontSyne">Impressum</h1>
+  <h1 *ngIf="isEnglish" class="title fontSyne">Imprint</h1>
+  <div>
+    <h2 *ngIf="!isEnglish" class="fontOverpass">Dienstanbieter</h2>
+    <h2 *ngIf="isEnglish" class="fontOverpass">Service Provider</h2>
+    <div class="details">
+      <span class="fontOverpass">Sandor Balazsi</span>
+      <span class="fontOverpass">Büttenenring 8.</span>
+      <span class="fontOverpass">6006 Luzern</span>
     </div>
-    <div>
-        <h2 class="fontOverpass">Contact</h2>
-        <span class="fontOverpass">E-mail address: sandor.b&#64;gmx.ch</span>
-        <p class="seal"><a href="https://datenschutz-generator.de/" title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken." target="_blank" rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a></p>
-    </div>
+  </div>
+  <div class="details">
+    <h2 *ngIf="!isEnglish" class="fontOverpass">Kontakt</h2>
+    <h2 *ngIf="isEnglish" class="fontOverpass">Contact</h2>
+    <span class="fontOverpass">E-mail: sandor.b&#64;gmx.ch</span>
+    <p *ngIf="!isEnglish" class="seal">
+      <a
+        href="https://datenschutz-generator.de/"
+        title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        >Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas
+        Schwenke.</a
+      >
+    </p>
+    <p *ngIf="isEnglish" class="seal">
+      <a
+        href="https://datenschutz-generator.de/"
+        title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        >Created with the free privacy policy generator from Dr. Thomas
+        Schwenke.</a
+      >
+    </p>
+  </div>
 </div>

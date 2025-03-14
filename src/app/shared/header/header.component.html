@@ -1,7 +1,9 @@
 <div class="header-background">
-<header>
-    <a href="#"><img class="logo" src="../../../assets/img/logo-white.png" alt=""></a>
-    
+  <header>
+    <a href="#"
+      ><img class="logo" src="../../../assets/img/logo-white.png" alt=""
+    /></a>
+
     <div class="header-right">
       <div class="onoffswitch">
         <input
@@ -11,17 +13,22 @@
           id="myonoffswitch"
           tabindex="0"
           [checked]="!isEnglish"
-          (change)="toggleLanguage($event)">
+          (change)="toggleLanguage($event)"
+        />
         <label class="onoffswitch-label" for="myonoffswitch">
-            <span class="onoffswitch-inner"></span>
-            <span class="onoffswitch-switch"></span>
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
         </label>
       </div>
-    <div class="hamburger-menu" [class.active]="isActive" (click)="changeNav()">
+      <div
+        class="hamburger-menu"
+        [class.active]="isActive"
+        (click)="changeNav()"
+      >
         <div class="line line-1"></div>
         <div class="line line-2"></div>
         <div class="line line-3"></div>
       </div>
     </div>
-</header>
+  </header>
 </div>

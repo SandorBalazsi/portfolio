@@ -1,50 +1,181 @@
 <div class="contact-triangle"></div>
 <div class="contact-background">
-<div id="contact" class="contact-wrapper">
-    <h1 class="fontSyne">{{ isEnglish ? "Say Hi!" : 'Sag Hallo!' }}</h1>
-    <h3 class="fontOverpass">{{ isEnglish ? "Want to discuss a new project?" : 'Lass uns über dein neues Projekt sprechen!' }}</h3>
-    <span *ngIf="isEnglish" class="fontOverpass">Say hello! Let's discuss your ideas and make it happen!</span>
-    <span *ngIf="!isEnglish" class="fontOverpass">Schreib mir! Gemeinsam setzen wir deine Ideen um!</span>
-    <form class="fontOverpass" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <div class="floating-label-group">
-            <input placeholder=" " #name="ngModel" [(ngModel)]="contactData.name" [ngClass]="{ 'input-wrong': !name.valid && name.touched, 'input-correct': name.valid && name.touched}" class="contact-name" type="text" id="name" name="name" autocomplete="off" required>
-            <label class="floating-label fontOverpass">{{ isEnglish ? "Your name" : 'Dein Name' }}</label>
-            <span class="warning fontOverpass" 
-                [ngClass]="{ 'visible': !name.valid && name.touched, 'hidden' : name.valid || !name.touched}"
-            >{{ isEnglish ? "Your name is required" : 'Dein Name ist erforderlich' }}</span>
+  <div id="contact" class="contact-wrapper">
+    <h1 class="fontSyne">{{ isEnglish ? "Say Hi!" : "Sag Hallo!" }}</h1>
+    <h3 class="fontOverpass">
+      {{
+        isEnglish
+          ? "Want to discuss a new project?"
+          : "Lass uns über dein neues Projekt sprechen!"
+      }}
+    </h3>
+    <span *ngIf="isEnglish" class="fontOverpass"
+      >Say hello! Let's discuss your ideas and make it happen!</span
+    >
+    <span *ngIf="!isEnglish" class="fontOverpass"
+      >Schreib mir! Gemeinsam setzen wir deine Ideen um!</span
+    >
+    <form
+      class="fontOverpass"
+      (ngSubmit)="onSubmit(contactForm)"
+      #contactForm="ngForm"
+    >
+      <div class="floating-label-group">
+        <input
+          placeholder=" "
+          #name="ngModel"
+          [(ngModel)]="contactData.name"
+          [ngClass]="{
+            'input-wrong': !name.valid && name.touched,
+            'input-correct': name.valid && name.touched
+          }"
+          class="contact-name"
+          type="text"
+          id="name"
+          name="name"
+          autocomplete="off"
+          required
+        />
+        <label class="floating-label fontOverpass">{{
+          isEnglish ? "Your name" : "Dein Name"
+        }}</label>
+        <span
+          class="warning fontOverpass"
+          [ngClass]="{
+            visible: !name.valid && name.touched,
+            hidden: name.valid || !name.touched
+          }"
+          >{{
+            isEnglish ? "Your name is required" : "Dein Name ist erforderlich"
+          }}</span
+        >
+      </div>
+      <div class="floating-label-group">
+        <input
+          placeholder=" "
+          #email="ngModel"
+          [(ngModel)]="contactData.email"
+          [ngClass]="{
+            'input-wrong': !email.valid && email.touched,
+            'input-correct': email.valid && email.touched
+          }"
+          class="email"
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="off"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          required
+        />
+        <label class="floating-label fontOverpass">{{
+          isEnglish ? "Your email" : "Dein E-mail"
+        }}</label>
+        <span
+          class="warning fontOverpass"
+          [ngClass]="{
+            visible: !email.valid && email.touched,
+            hidden: email.valid || !email.touched
+          }"
+          >{{
+            isEnglish
+              ? "Your email is required"
+              : "Dein E-mail ist erforderlich"
+          }}</span
+        >
+      </div>
+      <div class="floating-label-group">
+        <textarea
+          placeholder=" "
+          #message="ngModel"
+          [(ngModel)]="contactData.message"
+          [ngClass]="{
+            'input-wrong': !message.valid && message.touched,
+            'input-correct': message.valid && message.touched
+          }"
+          minlength="1"
+          class="message"
+          type="text"
+          id="message"
+          name="message"
+          autocomplete="off"
+          required
+        ></textarea>
+        <label class="floating-label fontOverpass">{{
+          isEnglish ? "Your message" : "Deine Nachricht"
+        }}</label>
+        <span
+          class="warning fontOverpass"
+          [ngClass]="{
+            visible: !message.valid && message.touched,
+            hidden: message.valid || !message.touched
+          }"
+          >{{
+            isEnglish ? "Your message is empty" : "Deine Nachricht ist leer"
+          }}</span
+        >
+      </div>
+      <div class="privacy-check">
+        <div class="privacy-input-p">
+          <input
+            #checkbox
+            [(ngModel)]="checkboxChecked"
+            name="checkbox"
+            (click)="changeCheckbox()"
+            class="checkbox"
+            type="checkbox"
+            required
+          />
+          <p *ngIf="isEnglish" class="fontOverpass">
+            I've read the
+            <a
+              routerLink="/legal-notice"
+              routerLinkActive="active"
+              class="privacy-link"
+              ariaCurrentWhenActive="page"
+              >privacy Policy</a
+            >
+            and agree to the processing of my data as outlined.
+          </p>
+          <p *ngIf="!isEnglish" class="fontOverpass">
+            Ich habe die
+            <a
+              class="privacy-link"
+              routerLink="/legal-notice"
+              ariaCurrentWhenActive="page"
+              >Datenschutzerklärung</a
+            >
+            gelesen und stimme der Verarbeitung meiner Daten gemäß den darin
+            enthaltenen Informationen zu.
+          </p>
         </div>
-        <div class="floating-label-group">
-            <input placeholder=" " #email="ngModel" [(ngModel)]="contactData.email" [ngClass]="{ 'input-wrong': !email.valid && email.touched, 'input-correct': email.valid && email.touched}" class="email" type="email" id="email" name="email" autocomplete="off" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-            <label class="floating-label fontOverpass">{{ isEnglish ? "Your email" : 'Dein E-mail' }}</label>
-            <span class="warning fontOverpass"
-            [ngClass]="{ 'visible': !email.valid && email.touched, 'hidden' : email.valid || !email.touched}"
-            >{{ isEnglish ? "Your email is required" : 'Dein E-mail ist erforderlich' }}</span>
-            
-        </div>
-        <div class="floating-label-group">
-            <textarea placeholder=" " #message="ngModel" [(ngModel)]="contactData.message" [ngClass]="{ 'input-wrong': !message.valid && message.touched, 'input-correct': message.valid && message.touched}" minlength="1" class="message" type="text" id="message" name="message" autocomplete="off" required></textarea>
-            <label class="floating-label fontOverpass">{{ isEnglish ? "Your message" : 'Deine Nachricht' }}</label>
-            <span class="warning fontOverpass"
-            [ngClass]="{ 'visible': !message.valid && message.touched, 'hidden' : message.valid || !message.touched}"
-            >{{ isEnglish ? "Your message is empty" : 'Deine Nachricht ist leer' }}</span>
-        </div>
-        <div class="privacy-check">
-            <div class="privacy-input-p">
-            <input #checkbox [(ngModel)]="checkboxChecked" name="checkbox" (click)="changeCheckbox()" class="checkbox" type="checkbox" required>
-            <p *ngIf="isEnglish" class="fontOverpass">I've read the <a routerLink="/imprint" routerLinkActive ="active" class="privacy-link" ariaCurrentWhenActive="page">privacy Policy</a> and agree to the processing of my data as outlined.</p>
-            <p *ngIf="!isEnglish" class="fontOverpass">Ich habe die <a class="privacy-link" routerLink="/legal-notice" ariaCurrentWhenActive="page">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten gemäß den darin enthaltenen Informationen zu.</p>
-            </div>
-            <div class="privacy-warning">
-            <span class="warning fontOverpass"
+        <div class="privacy-warning">
+          <span
+            class="warning fontOverpass"
             [ngClass]="checkboxChecked ? 'hidden' : 'visible'"
-            >{{ isEnglish ? 'Please accept the privacy policy.' : 'Bitte akzeptiere die Datenschutzerklärung.'}}</span>
-            </div>
+            >{{
+              isEnglish
+                ? "Please accept the privacy policy."
+                : "Bitte akzeptiere die Datenschutzerklärung."
+            }}</span
+          >
         </div>
-        <button [disabled]="contactForm.form.invalid" class="submit-button" type="submit" >{{ isEnglish ? 'Send message' : 'Nachricht senden'}}</button>
+      </div>
+      <button
+        [disabled]="contactForm.form.invalid"
+        class="submit-button"
+        type="submit"
+      >
+        {{ isEnglish ? "Send message" : "Nachricht senden" }}
+      </button>
     </form>
     <div id="snackbar" class="fontOverpass">
-        <span *ngIf="isEnglish" >Thank you for your message,<br>I will contact you soon!</span>
-        <span *ngIf="!isEnglish" >Vielen Dank für deine Nachricht,<br>ich werde mich bald bei dir melden!</span>
+      <span *ngIf="isEnglish"
+        >Thank you for your message,<br />I will contact you soon!</span
+      >
+      <span *ngIf="!isEnglish"
+        >Vielen Dank für deine Nachricht,<br />ich werde mich bald bei dir
+        melden!</span
+      >
     </div>
-</div>
+  </div>
 </div>

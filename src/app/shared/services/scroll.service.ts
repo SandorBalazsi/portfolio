@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ScrollService {
+  /**
+   * Scrolls to the specified element with an optional offset.
+   * @param elementId - The ID of the element to scroll to.
+   * @param offset - The offset to apply to the scroll position.
+   */
   scrollToElement(elementId: string, offset: number = 0): void {
     const element = document.getElementById(elementId);
     if (element) {
-      // Get element's position relative to the viewport
       const elementPosition = element.getBoundingClientRect().top;
-      // Add current scroll position to get absolute position
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   }

@@ -1,15 +1,30 @@
 <div class="footer-background">
-<div class="footer-wrapper">
+  <div class="footer-wrapper">
     <div class="footer-logo">
-        <a class="logo" href="#"><img src="/assets/img/logo-dark.png" alt=""></a>
-        <span class="copyright fontOverpass">© Sandor Balazsi 2024</span>
+      <a class="logo" href="#"
+        ><img src="/assets/img/logo-dark.png" alt=""
+      /></a>
+      <span class="copyright fontOverpass">© Sandor Balazsi 2024</span>
     </div>
     <div class="footer-social">
-        <a class="arrow" href="#"><img class="scroll-up" src="/assets/img/arrow-up-big.png" alt=""></a>
-        <a class="github" href="https://github.com/SandorBalazsi" target="_blank"><img src="/assets/img/github.png" alt=""> </a>
-        <a class="mail" [href]="mailto('sandor.b@gmx.ch','Let\'s Connect!')"><img src="/assets/img/mail.png" alt=""></a>
-        <a class="linkedin" href="https://www.linkedin.com/in/sandor-balazsi-0690952a0" target="_blank"><img src="/assets/img/linkedin.png" alt=""></a>
-        <a class="legal-notice fontOverpass" href="">{{ isEnglish ? 'Legal Notice' : 'Impressum'}}</a>
+      <a class="arrow" href="#"
+        ><img class="scroll-up" src="/assets/img/arrow-up-big.png" alt=""
+      /></a>
+      <a class="github" href="https://github.com/SandorBalazsi" target="_blank"
+        ><img src="/assets/img/github.png" alt="" />
+      </a>
+      <a class="mail" [href]="mailto('sandor.b@gmx.ch', 'Let\'s Connect!')"
+        ><img src="/assets/img/mail.png" alt=""
+      /></a>
+      <a
+        class="linkedin"
+        href="https://www.linkedin.com/in/sandor-balazsi-0690952a0"
+        target="_blank"
+        ><img src="/assets/img/linkedin.png" alt=""
+      /></a>
+      <a class="legal-notice fontOverpass" routerLink="/imprint">{{
+        isEnglish ? "Imprint" : "Impressum"
+      }}</a>
     </div>
-</div>
+  </div>
 </div>

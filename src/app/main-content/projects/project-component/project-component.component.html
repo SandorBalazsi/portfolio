@@ -1,18 +1,27 @@
-<div [ngClass]="{ 'reverse': reverse }" class="project-wrapper">
-    <span class="fontSyne nr-project">{{ number }}</span>
-    <div class="img-wrapper">
-        <img [src]="imageSrc" alt="">
-        <div class="img-border"><div class="project-arrow"></div></div>
+<div
+  [ngClass]="{ reverse: reverse }"
+  class="project-wrapper"
+  #projectWrapper
+  (mouseenter)="onMouseOver()"
+  (mouseleave)="onMouseLeft()"
+>
+  <span class="fontSyne nr-project">{{ number }}</span>
+  <div class="img-wrapper">
+    <img [src]="imageSrc" alt="" />
+    <div class="img-border"><div class="project-arrow"></div></div>
+  </div>
+  <div class="project-details">
+    <h1 class="project-title fontSyne">{{ title }}</h1>
+    <span class="skills fontOverpass">{{ skills }}</span>
+    <p class="description fontOverpass" *ngIf="isEnglish">
+      {{ descriptionEn }}
+    </p>
+    <p class="description fontOverpass" *ngIf="!isEnglish">
+      {{ descriptionDe }}
+    </p>
+    <div class="buttons">
+      <button class="fontOverpass" (click)="openGithub()">Github</button>
+      <button class="fontOverpass" (click)="openLive()">Live Test</button>
     </div>
-    <div  class="project-details">
-        <h1 class="project-title fontSyne">{{ title}}</h1>
-        <span class="skills fontOverpass">{{ skills }}</span>
-        <p class="description fontOverpass" *ngIf="isEnglish">{{ descriptionEn }}</p>
-        <p class="description fontOverpass" *ngIf="!isEnglish">{{ descriptionDe }}</p>
-        <div class="buttons">
-            <button  class="fontOverpass" (click)="openGithub()">Github</button>
-            <button  class="fontOverpass" (click)="openLive()">Live Test</button>
-        </div>
-        
-    </div>
+  </div>
 </div>

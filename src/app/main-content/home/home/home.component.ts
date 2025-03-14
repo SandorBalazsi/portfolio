@@ -5,7 +5,7 @@ import { SkillsComponent } from '../../skills/skills.component';
 import { ProjectsComponent } from '../../projects/projects.component';
 import { ReferenceComponent } from '../../reference/reference.component';
 import { ContactComponent } from '../../contact/contact.component';
-import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -15,5 +15,4 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
 }

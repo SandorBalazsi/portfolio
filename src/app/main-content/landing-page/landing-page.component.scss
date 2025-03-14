@@ -59,7 +59,7 @@
   }
 }
 
-.scroll-down-wrapper{
+.scroll-down-wrapper {
   position: relative;
   width: 116px;
   height: 180px;
@@ -73,8 +73,7 @@
   width: 0;
   height: 95px;
   border: 2px solid;
-  animation: jumpInfinite 2s infinite ease ;
-  
+  animation: jumpInfinite 2s infinite ease;
 }
 
 .down-arrow:after {
@@ -115,7 +114,6 @@
 }
 
 @media (max-width: 992px) {
-    
   .landing-page-wrapper {
     padding-top: 243px;
     height: calc(100dvh - 204px);
@@ -132,7 +130,6 @@
   }
 }
 
-
 @media (max-width: 660px) {
   .landing-page-wrapper {
     padding-left: 10px;
@@ -147,41 +144,42 @@
       width: 60% !important;
     }
     .name {
-        font-size: 15px !important;
+      font-size: 15px !important;
       width: unset !important;
     }
-    .second-title{
-        justify-content: center;
-        width: 85%;
+    .second-title {
+      justify-content: center;
+      width: 85%;
     }
-    .scroll-area{
-        p, a{
-            font-size: 18px;
-        }
+    .scroll-area {
+      p,
+      a {
+        font-size: 18px;
+      }
     }
   }
 }
 
-@media (max-width: 500px){
-    .landing-page-wrapper{
-        h1{
-            font-size: 35px;
-        }
-        .second-title{
-            width: 80%;
-            gap: 5px;
-        }
+@media (max-width: 500px) {
+  .landing-page-wrapper {
+    h1 {
+      font-size: 35px;
     }
+    .second-title {
+      width: 80%;
+      gap: 5px;
+    }
+  }
 }
 
 @media (max-width: 380px) {
-    .landing-page-wrapper{
-        h1{
-            font-size: 30px;
-        }
-        .second-title{
-            width: 94%;
-            gap: 5px;
-        }
+  .landing-page-wrapper {
+    h1 {
+      font-size: 30px;
     }
+    .second-title {
+      width: 94%;
+      gap: 5px;
+    }
+  }
 }
