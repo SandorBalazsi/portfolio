@@ -27,7 +27,6 @@ export class AboutMeComponent {
       const animatedElement = document.getElementById('animation-first');
       if (element && animatedElement) {
         if (this.isElementVisible(element)) {
-          console.log('animation start NOW!');
           animatedElement.classList.add('animation');
         } else {
           animatedElement.classList.remove('animation');

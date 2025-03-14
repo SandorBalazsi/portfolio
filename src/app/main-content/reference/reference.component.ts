@@ -26,7 +26,6 @@ export class ReferenceComponent {
       const animatedElement = document.getElementById('animation-third');
       if (element && animatedElement) {
         if (this.isElementVisible(element)) {
-          console.log('animation start NOW!');
           animatedElement.classList.add('animation');
         } else {
           animatedElement.classList.remove('animation');
