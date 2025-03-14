@@ -133,6 +133,9 @@
   height: 280px;
   position: relative;
   padding-bottom: 80px;
+  max-width: 1440px;
+  padding-left: 100px;
+  padding-right: 100px;
 
   > div {
     position: absolute;
@@ -243,6 +246,10 @@
 
 @media (max-width: 600px) {
   .skills-wrapper {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .arrow-wrapper {
     padding-left: 25px;
     padding-right: 25px;
   }
