@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   transition: none;
+  margin-top: -1px;
 }
 
 .footer-wrapper {
@@ -15,7 +16,6 @@
   font-size: 22px;
   padding-bottom: 46px;
   justify-content: space-evenly;
-  width: 100%;
   max-width: 1440px;
 
   .footer-logo {

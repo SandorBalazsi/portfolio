@@ -4,6 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ScrollService {
+
+  private scrollTarget: string | null = null;
+
+  /**
+   * Sets the scroll target before navigating.
+   */
+  setScrollTarget(elementId: string) {
+    this.scrollTarget = elementId;
+  }
+
+  /**
+   * Scrolls to the stored element if it exists.
+   */
+  scrollToStoredElement(offset: number = 0): void {
+    if (this.scrollTarget) {
+      this.scrollToElement(this.scrollTarget, offset);
+      this.scrollTarget = null; // Clear after scrolling
+    }
+  }
   /**
    * Scrolls to the specified element with an optional offset.
    * @param elementId - The ID of the element to scroll to.

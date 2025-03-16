@@ -204,6 +204,11 @@
 }
 
 @media (max-width: 768px) {
+  .navigation-wrapper{
+    a{
+      font-size: 38px;
+    }
+  }
   .nav-footer {
     padding-top: 70px;
   }

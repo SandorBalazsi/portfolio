@@ -5,6 +5,7 @@ import { ScrollService } from '../services/scroll.service';
 import { HeaderComponent } from '../header/header.component';
 import { LanguageService } from '../../shared/services/language.service';
 import { Subscription } from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -19,6 +20,7 @@ export class NavigationComponent {
   isEnglish = true;
   private languageService = inject(LanguageService);
   private subscription: Subscription = new Subscription();
+  private router = inject(Router);
 
   constructor(private scrollService: ScrollService) {
     /**
@@ -26,6 +28,13 @@ export class NavigationComponent {
      */
     this.navService.navOpen$.subscribe((open) => {
       this.navOpen = open; // Update component state when service changes
+      
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          setTimeout(() => {
+            this.scrollService.scrollToStoredElement(140);
+          }, 100);
+        }});
     });
   }
 
@@ -35,10 +44,20 @@ export class NavigationComponent {
    */
   scrollToSection(elementId: string): void {
     this.closeNav();
-
     this.navService.toggleNav();
-    this.scrollService.scrollToElement(elementId, 140);
+
+    const currentUrl = this.router.url;
+
+    if (currentUrl === '/' || currentUrl.startsWith('/#')) {
+      // If already on the main page, scroll immediately
+      this.scrollService.scrollToElement(elementId, 140);
+    } else {
+      // Store the target, navigate, and scroll after routing
+      this.scrollService.setScrollTarget(elementId);
+      this.router.navigate(['/']);
+    }
   }
+  
 
   /**
    * Closes the navigation.

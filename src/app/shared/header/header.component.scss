@@ -17,12 +17,12 @@ header {
   align-items: center;
   position: fixed;
   width: calc(100% - 200px);
+  padding-left: 100px;
+  max-width: 1440px;
   top: 0;
   left: 0;
   background-color: #fffcf3;
   z-index: 1;
-  padding-left: 100px;
-  padding-right: 100px;
 
   .logo {
     height: 60px;

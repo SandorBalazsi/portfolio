@@ -164,7 +164,7 @@ button {
   }
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 1290px) {
   .project-wrapper {
     flex-direction: column;
     align-items: center;
@@ -199,7 +199,7 @@ button {
     flex-direction: column !important;
     .project-details {
       transform: translateY(-60%) !important;
-      padding-right: 0 !important;
+      
     }
   }
 
@@ -270,10 +270,16 @@ button {
 
 @media (max-width: 400px) {
   .project-wrapper {
+
+    .project-arrow{
+      width: 25px;
+      height: 25px;
+      right: -10px;
+    }
     img,
     .img-border {
-      width: 286px;
-      height: 170px;
+      width: 280px;
+      height: 166px;
     }
     .img-border {
       top: 3px;
@@ -284,7 +290,15 @@ button {
       .img-border {
         left: unset !important;
         right: 3px !important;
+
+        .project-arrow {
+          right: unset;
+          left: -10px;
+        }
       }
+
+  
     }
   }
+
 }
