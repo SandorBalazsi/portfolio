@@ -30,12 +30,17 @@
   h1 {
     font-size: 78px;
     font-weight: 800;
-    align-self: center;
+    align-self: start;
     margin: 0;
     transition: color 0.15s;
+    padding-left: 100px;
 
     &:hover {
       color: #00bc8f;
+    }
+
+    @media (max-width:810px) {
+      padding-left: 25px;
     }
   }
 

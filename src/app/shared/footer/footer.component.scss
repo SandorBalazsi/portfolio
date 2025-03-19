@@ -9,13 +9,12 @@
 }
 
 .footer-wrapper {
+  width: calc(100% - 200px);
   display: flex;
-  padding-left: 100px;
-  padding-right: 100px;
   color: white;
   font-size: 22px;
   padding-bottom: 46px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   max-width: 1440px;
 
   .footer-logo {
@@ -96,8 +95,7 @@
 
 @media (max-width: 768px) {
   .footer-wrapper {
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: 37px;
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -127,7 +125,7 @@
 
 @media (min-width: 1920px) {
   .footer-wrapper {
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100vw;
   }
 }

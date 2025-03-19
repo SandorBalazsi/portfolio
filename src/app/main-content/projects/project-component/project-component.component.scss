@@ -1,5 +1,4 @@
 .project-wrapper {
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding-bottom: 70px;
@@ -70,6 +69,35 @@
       animation: turnArrow 0.3s ease forwards;
     }
   }
+}
+
+@media (hover: hover){
+  .project-wrapper:hover{
+    @media (min-width: 1024px) {
+      .nr-project {
+        top: -40px;
+      }
+    }
+
+    img {
+      filter: none;
+    }
+
+    .project-details {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .img-border,
+    & + .img-border:hover {
+      display: block;
+    }
+
+    .project-arrow {
+      animation: turnArrow 0.3s ease forwards;
+    }
+  }
+
 }
 
 .img-border {
