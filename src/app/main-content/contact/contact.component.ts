@@ -14,6 +14,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+[x: string]: any;
   checkboxChecked = false;
   isEnglish = true;
   private languageService = inject(LanguageService);

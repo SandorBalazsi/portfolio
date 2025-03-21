@@ -41,7 +41,6 @@ export class ProjectComponentComponent {
      * based on the visibility of the target element.
      */
     this.scrollHandler = () => {
-      console.log('Scroll handler triggered');
       const element = this.projectWrapperRef?.nativeElement;
     
       if (element && this.isMobileDevice) {
@@ -77,15 +76,11 @@ export class ProjectComponentComponent {
   }
 
   private detectMobileDevice(): boolean {
-    const hasTouchCapability = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const mobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     );
-    const hasMobileScreenSize = window.innerWidth <= 1024;
-  
-    const isMobile = hasTouchCapability || mobileUserAgent || hasMobileScreenSize;
-    console.log('Is mobile device:', isMobile);
-    return isMobile;
   }
 
   ngOnDestroy(): void {
@@ -99,13 +94,8 @@ export class ProjectComponentComponent {
 onMouseOver() {
   if (this.isMobileDevice) {
     if (this.projectWrapperRef?.nativeElement) {
-      console.log('Adding hover effect on mobile device');
       this.projectWrapperRef.nativeElement.classList.add('hover-effect');
-    } else {
-      console.warn('projectWrapperRef is not initialized');
     }
-  } else {
-    console.log('Not a mobile device, hover effect not added');
   }
 }
 
@@ -115,14 +105,9 @@ onMouseOver() {
 onMouseLeft() {
   if (this.isMobileDevice) {
     if (this.projectWrapperRef?.nativeElement) {
-      console.log('Removing hover effect on mobile device');
       this.projectWrapperRef.nativeElement.classList.remove('hover-effect');
-    } else {
-      console.warn('projectWrapperRef is not initialized');
     }
-  } else {
-    console.log('Not a mobile device, hover effect not removed');
-  }
+  } 
 }
 
 

@@ -42,7 +42,6 @@
     display: flex;
     justify-content: space-between;
     font-size: 22px;
-    font-weight: 300;
 
     a {
       text-decoration: none;
@@ -58,6 +57,27 @@
     }
   }
 }
+
+.masked-text {
+  color: transparent;
+  background-image: url('/assets/img/black.jpg'); 
+  background-size: 200%; 
+  background-position: 0 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-background 10s infinite alternate linear;
+}
+
+@keyframes animate-background {
+  0% {
+      background-position: 0 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
 
 .scroll-down-wrapper {
   position: relative;
