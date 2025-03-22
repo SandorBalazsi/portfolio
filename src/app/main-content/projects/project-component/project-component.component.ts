@@ -32,6 +32,8 @@ export class ProjectComponentComponent {
   isEnglish: boolean = true;
   private subscription: Subscription = new Subscription();
   private scrollHandler: () => void;
+  private hasHoverEffect = false;
+  private hoverTimeout: any = null;
   isMobileDevice = false;
   @ViewChild('projectWrapper') projectWrapperRef: ElementRef | undefined;
 
@@ -41,17 +43,35 @@ export class ProjectComponentComponent {
      * based on the visibility of the target element.
      */
     this.scrollHandler = () => {
-      const element = this.projectWrapperRef?.nativeElement;
-    
-      if (element && this.isMobileDevice) {
-        if (this.isElementVisible(element)) {
-          this.onMouseOver();
-        } else {
-          this.onMouseLeft();
-        }
-      }
+      this.handleHoverChanges();
     };
   }
+
+ 
+
+handleHoverChanges() {
+  this.isMobileDevice = this.detectMobileDevice();
+  const element = this.projectWrapperRef?.nativeElement;
+
+  if (!element) return;
+
+  if (this.isMobileDevice) {
+    if (this.isElementVisible(element) && !this.hasHoverEffect) {
+      this.hoverTimeout = setTimeout(() => {
+        this.onMouseOver();
+        this.hasHoverEffect = true;
+      }, 500);
+    } else if (!this.isElementVisible(element) && this.hasHoverEffect) {
+      clearTimeout(this.hoverTimeout);
+      this.onMouseLeft();
+      this.hasHoverEffect = false;
+    }
+  } else {
+    clearTimeout(this.hoverTimeout);
+    element.classList.remove('hover-effect');
+    this.hasHoverEffect = false; 
+  }
+}
 
   /**
    * Checks if the given element is visible in the viewport.
@@ -65,7 +85,9 @@ export class ProjectComponentComponent {
   }
 
   ngOnInit(): void {
-    this.isMobileDevice = this.detectMobileDevice();
+    window.addEventListener('resize', () => {
+      this.handleHoverChanges();
+    });
     window.addEventListener('scroll', this.scrollHandler);
     this.isEnglish = this.languageService.getCurrentLanguage();
     this.subscription = this.languageService.isEnglish$.subscribe(

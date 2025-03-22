@@ -42,7 +42,6 @@ export class ReferenceComponent {
   private isElementVisible(element: Element): boolean {
     const elementTop = element.getBoundingClientRect().top;
     const elementBottom = elementTop + element.getBoundingClientRect().height;
-
     return elementBottom > 0 && elementTop < window.innerHeight;
   }
 

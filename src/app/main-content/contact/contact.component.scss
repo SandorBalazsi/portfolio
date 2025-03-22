@@ -223,7 +223,7 @@
 .privacy-check {
   display: flex;
   width: 100%;
-  font-size: 14px;
+  font-size: 14px !important;
 
   position: relative;
   display: flex;
@@ -286,7 +286,7 @@
 
 .privacy-warning {
   span {
-    align-self: flex-start;
+    align-self: flex-start !important;
   }
 }
 
@@ -306,14 +306,12 @@
 }
 
 #snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-    However, delay the fade out process for 2.5 seconds */
+  visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-/* Animations to fade the snackbar in and out */
+
 @-webkit-keyframes fadein {
   from {
     bottom: 0;
@@ -382,6 +380,16 @@
     }
     .submit-button {
       padding: 20px 40px 20px 40px;
+    }
+
+    .privacy-warning{
+      span{
+        font-size: 14px;
+        text-align: start !important;
+        padding: 10px 0 0;
+        
+        
+      }
     }
   }
   .contact-triangle {

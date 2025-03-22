@@ -151,7 +151,7 @@
         <div class="privacy-warning">
           <span
             class="warning fontOverpass"
-            [ngClass]="(name.valid && email.valid && message.valid) && !checkboxChecked ? 'visible' : 'hidden'"
+            [ngClass]="(name.touched && email.touched && message.touched) && !checkboxChecked ? 'visible' : 'hidden'"
             >{{
               isEnglish
                 ? "Please accept the privacy policy."

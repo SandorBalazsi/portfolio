@@ -36,6 +36,7 @@ export class NavigationComponent {
           }, 100);
         }});
     });
+    
   }
 
   /**
@@ -57,7 +58,6 @@ export class NavigationComponent {
       this.router.navigate(['/']);
     }
   }
-  
 
   /**
    * Closes the navigation.

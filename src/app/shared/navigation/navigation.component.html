@@ -1,12 +1,12 @@
 <div class="navigation-wrapper" [ngClass]="{ 'nav-open': navOpen }">
   <div class="nav-menu">
-    <a (click)="scrollToSection('about-me')" class="fontSyne">{{
+    <a (click)="scrollToSection('about-me')" class="fontSyne fade-in-element">{{
       isEnglish ? "About Me" : "Über mich"
     }}</a>
-    <a (click)="scrollToSection('skills')" class="fontSyne">{{
+    <a (click)="scrollToSection('skills')" class="fontSyne fade-in-element">{{
       isEnglish ? "Skills" : "Fähigkeiten"
     }}</a>
-    <a (click)="scrollToSection('portfolio')" class="fontSyne">Portfolio</a>
+    <a (click)="scrollToSection('portfolio')" class="fontSyne fade-in-element">Portfolio</a>
   </div>
   <div>
     <div class="contact-triangle"></div>
